@@ -1,0 +1,23 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>@ViewData["Title"] - TicketingApp</title>    
+    <link rel="stylesheet" href="~/css/style.css" />
+</head>
+<body>
+    <header>
+        @*Частичное представление*@
+        @*@await Html.PartialAsync("Header")*@
+    </header>
+    <div class="Container">        
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+    <footer>
+        <div class="container">
+            &copy; 2025 - TicketingApp - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,17 @@
+﻿.header {
+    height: 1080px;
+    width: 100%;
+    background-color: pink;
+    display: flex;
+    align-items: stretch;
+}
+.Frame_1 {
+    background-color: red;
+    height: 300px;
+    width: 200px;
+}
+.Frame_2 {
+    background-color: green;
+    height: 100px;
+    width: 200px;
+}
