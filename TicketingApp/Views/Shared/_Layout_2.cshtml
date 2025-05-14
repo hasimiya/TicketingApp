@@ -1,13 +1,14 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-    <title>@ViewData["Title"] - TicketingApp</title>    
-    <link rel="stylesheet" href="~/css/style.css" />
+    <title>@ViewData["Title"] - TicketingApp</title>
+    @*<link rel="stylesheet" href="~/css/style.css" />*@
+    <link rel="stylesheet" href="~/css/main.css">
 </head>
 <body>
     <header>
         @*Частичное представление*@
-        @*@await Html.PartialAsync("Header")*@
+        @await Html.PartialAsync("_Header")
     </header>
     <div class="Container">        
         <main role="main" class="pb-3">

@@ -1,4 +1,6 @@
-﻿* {
+@import 'variables';
+
+* {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
@@ -21,30 +23,37 @@
     width: 32px;
     height: 248px;
     /*    justify-content: center;*/
-    /*    align-content: center;*/
+    //align-content: initial;
 }
 
-    .Frame_1 img, .Frame_2 img {
-        width: 16px;
-        height: 16px;
-    }
+.Frame_1 img, .Frame_2 img {
+    width: 16px;
+    height: 16px;
+}
+
+.logo, .logo img {
+    width: 32px;
+    height: 32px;
+    margin-bottom: 24px;
+    background-color: green;
+}
 
 .header__menu button {
     width: 32px;
     height: 32px;
     background-color: pink;
     border: none;
-    border-radius: 8px
+    border-radius: 8px;
 }
 
-    .header__menu button:hover {
-        background-color: blue;
-    }
-
-.logo, .logo img {
-    width: 32px;
-    height: 32px;
+.header__menu button:hover {
+    background-color: $button-hover-background-color;
 }
+
+.header__menu__button {
+    margin-bottom: 8px;
+}
+
 
 .Frame_2 {
     background-color: #00000099;
