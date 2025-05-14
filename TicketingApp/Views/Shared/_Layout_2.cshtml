@@ -6,19 +6,14 @@
     <link rel="stylesheet" href="~/css/main.css">
 </head>
 <body>
-    <header>
-        @*Частичное представление*@
-        @await Html.PartialAsync("_Header")
-    </header>
-    <div class="Container">        
-        <main role="main" class="pb-3">
-            @RenderBody()
-        </main>
-    </div>
-    <footer>
-        <div class="container">
-            &copy; 2025 - TicketingApp - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+    <div style="display: flex">
+            @await Html.PartialAsync("_Header")
+        
+        <div class="Container">
+            <main role="main" class="pb-3">                
+                @RenderBody()
+            </main>
         </div>
-    </footer>
+    </div>    
 </body>
 </html>
