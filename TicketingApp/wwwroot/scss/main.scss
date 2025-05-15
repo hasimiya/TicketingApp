@@ -13,7 +13,7 @@
     display: flex;
     flex-direction: column;
     padding: 18px;
-    flex-wrap: wrap;
+    //flex-wrap: wrap;
     align-content: center;
     justify-content: space-between;
 }
@@ -31,12 +31,12 @@
 
 .header__menu {
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
     justify-content: start;
     gap: 8px;
 }
 
-.header__menu button {
+.header__menu__button {
     width: 32px;
     height: 32px;
     background-color: transparent;
@@ -47,18 +47,18 @@
     justify-content: center;
 }
 
-.header__menu button:hover,
-.header_frame_2 button:hover,
-.header__menu button:active {
+.header__menu__button:hover,
+.header__frame__2 button:hover,
+.header__menu__button:active {
     background-color: $button-hover-background-color;
 }
 
-.header__menu button:hover svg,
-.header__menu button:hover img {
+.header__menu__button:hover svg,
+.header__menu__button:hover img {
     filter: brightness(0) invert(1);
 }
 
-.header_frame_2 button {
+.header__frame__2 button {
     width: 32px;
     height: 32px;
     background-color: #00000099;
@@ -68,4 +68,77 @@
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+// main__container
+
+.main__container {
+    width: 1852px;
+    margin-top: 58.5px;
+    margin-bottom: 58.5px;
+    display: flex;
+    justify-content: center;
+    //background-color: pink;
+}
+
+.main__container__frame {
+    width: 1200px;
+    //background-color: purple;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 48px;
+}
+
+.main__container__frame__1 {
+    width: 467px;
+    height: 128px;
+    //background-color: green;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    //align-content: center;
+    justify-content: space-between;
+}
+
+.main__container__frame__1 h1 {
+    text-align: center;
+}
+
+.main__container__frame__2 {
+    width: 1200px;
+    height: 179px;
+    background-color: red;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.main__container__frame__3 {
+    width: 1200px;
+    height: 560px;
+    background-color: yellow;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+//Title styles
+
+.title__font {
+    font-family: $title-font-family;
+    font-weight: $title-font-weight;
+    font-size: $title-font-size;
+    line-height: $title-line-height;
+    letter-spacing: $title-letter-spacing;
+    color: $title-color;
+}
+
+.text__font {
+    font-family: $text-font-family;
+    font-weight: $text-font-weight;
+    font-size: $text-font-size;
+    line-height: $text-line-height;
+    color: $text-color;
 }

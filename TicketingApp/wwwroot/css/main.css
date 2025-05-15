@@ -11,7 +11,6 @@
   display: flex;
   flex-direction: column;
   padding: 18px;
-  flex-wrap: wrap;
   align-content: center;
   justify-content: space-between;
 }
@@ -29,12 +28,12 @@
 
 .header__menu {
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
   justify-content: start;
   gap: 8px;
 }
 
-.header__menu button {
+.header__menu__button {
   width: 32px;
   height: 32px;
   background-color: transparent;
@@ -45,18 +44,18 @@
   justify-content: center;
 }
 
-.header__menu button:hover,
-.header_frame_2 button:hover,
-.header__menu button:active {
+.header__menu__button:hover,
+.header__frame__2 button:hover,
+.header__menu__button:active {
   background-color: blue;
 }
 
-.header__menu button:hover svg,
-.header__menu button:hover img {
+.header__menu__button:hover svg,
+.header__menu__button:hover img {
   filter: brightness(0) invert(1);
 }
 
-.header_frame_2 button {
+.header__frame__2 button {
   width: 32px;
   height: 32px;
   background-color: rgba(0, 0, 0, 0.6);
@@ -65,6 +64,71 @@
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.main__container {
+  width: 1852px;
+  margin-top: 58.5px;
+  margin-bottom: 58.5px;
+  display: flex;
+  justify-content: center;
+}
+
+.main__container__frame {
+  width: 1200px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 48px;
+}
+
+.main__container__frame__1 {
+  width: 467px;
+  height: 128px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.main__container__frame__1 h1 {
+  text-align: center;
+}
+
+.main__container__frame__2 {
+  width: 1200px;
+  height: 179px;
+  background-color: red;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.main__container__frame__3 {
+  width: 1200px;
+  height: 560px;
+  background-color: yellow;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.title__font {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 20px;
+  letter-spacing: 0px;
+  color: rgba(0, 0, 0, 0.85);
+}
+
+.text__font {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 24px;
+  color: rgba(0, 0, 0, 0.65);
 }
 
 /*# sourceMappingURL=main.css.map */
