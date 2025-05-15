@@ -44,17 +44,6 @@
   justify-content: center;
 }
 
-.header__menu__button:hover,
-.header__frame__2 button:hover,
-.header__menu__button:active {
-  background-color: blue;
-}
-
-.header__menu__button:hover svg,
-.header__menu__button:hover img {
-  filter: brightness(0) invert(1);
-}
-
 .header__frame__2 button {
   width: 32px;
   height: 32px;
@@ -83,17 +72,22 @@
 }
 
 .main__container__frame__1 {
-  width: 467px;
-  height: 128px;
   display: flex;
-  flex-wrap: wrap;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
+  gap: 16px;
 }
-
 .main__container__frame__1 h1 {
   text-align: center;
+}
+.main__container__frame__1 button {
+  width: 64px;
+  height: 64px;
+}
+.main__container__frame__1 img {
+  width: 15px;
+  height: 20px;
 }
 
 .main__container__frame__2 {
@@ -101,8 +95,9 @@
   height: 179px;
   background-color: red;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 16px;
 }
 
 .main__container__frame__3 {
@@ -114,13 +109,75 @@
   justify-content: center;
 }
 
+.title__text__block {
+  background-color: white;
+  padding: 0 24px 0 24px;
+}
+
+.features-section {
+  background-color: purple;
+  display: flex;
+  justify-content: space-between;
+  padding: 24px;
+  gap: 16px;
+}
+
+.feature-card {
+  height: 143px;
+  border-radius: 12px;
+  border: 1px;
+  background-color: orange;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 24px;
+  gap: 16px;
+}
+
+.feature-card__description {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.feature-card__title {
+  display: flex;
+  gap: 12px;
+}
+.feature-card__title img {
+  width: 20px;
+  height: 20px;
+}
+
+.button__follow-the-link {
+  width: 48px;
+  height: 48px;
+  background-color: grey;
+  border: none;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header__menu__button:hover,
+.header__frame__2 button:hover,
+.header__menu__button:active,
+.button__follow-the-link:hover {
+  background-color: blue;
+}
+
+.header__menu__button:hover svg,
+.header__menu__button:hover img {
+  filter: brightness(0) invert(1);
+}
+
 .title__font {
   font-family: "Poppins", sans-serif;
   font-weight: 500;
   font-size: 20px;
   line-height: 20px;
   letter-spacing: 0px;
-  color: rgba(0, 0, 0, 0.85);
 }
 
 .text__font {
@@ -128,7 +185,19 @@
   font-weight: 400;
   font-size: 14px;
   line-height: 24px;
+  letter-spacing: 0px;
+}
+
+.title__font__color {
+  color: rgba(0, 0, 0, 0.85);
+}
+
+.text__font__color {
   color: rgba(0, 0, 0, 0.65);
+}
+
+.card__font__color {
+  color: rgb(0, 0, 0);
 }
 
 /*# sourceMappingURL=main.css.map */

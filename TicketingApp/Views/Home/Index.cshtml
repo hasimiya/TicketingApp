@@ -10,15 +10,24 @@
                 </button>
             </div>
             <div>
-                <h1 class="title__font">Welcome, {Name Surname}!</h1>
+                <h1 class="title__font title__font__color">Welcome, {Name Surname}!</h1>
                 <p class="text__font">Your central hub for account settings and technical support tickets</p>
             </div>
         </div>
+
         <div class="main__container__frame__2">
-            <h1>Vito Skaleto!</h1>
+            <div class="title__text__block">
+                <h1 class="title__font title__font__color">Main actions</h1>
+            </div>
+
+            <section class="features-section">
+                @await Html.PartialAsync("_Feature-card")
+                @await Html.PartialAsync("_Feature-card")
+            </section>
         </div>
+
         <div class="main__container__frame__3">
             <h1>Vito Skaleto!</h1>
         </div>
-    </div>    
+    </div>
 </div>

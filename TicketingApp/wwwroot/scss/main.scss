@@ -47,17 +47,6 @@
     justify-content: center;
 }
 
-.header__menu__button:hover,
-.header__frame__2 button:hover,
-.header__menu__button:active {
-    background-color: $button-hover-background-color;
-}
-
-.header__menu__button:hover svg,
-.header__menu__button:hover img {
-    filter: brightness(0) invert(1);
-}
-
 .header__frame__2 button {
     width: 32px;
     height: 32px;
@@ -91,29 +80,43 @@
 }
 
 .main__container__frame__1 {
-    width: 467px;
-    height: 128px;
+    //width: 467px;
+    //height: 128px;
     //background-color: green;
     display: flex;
-    flex-wrap: wrap;
     flex-direction: column;
     align-items: center;
-    //align-content: center;
     justify-content: space-between;
+    gap: 16px;
+
+    h1 {
+        text-align: center;
+    }
+
+    button {
+        width: 64px;
+        height: 64px;
+    }
+
+    img {
+        width: 15px;
+        height: 20px;
+    }
 }
 
-.main__container__frame__1 h1 {
-    text-align: center;
-}
 
 .main__container__frame__2 {
     width: 1200px;
     height: 179px;
     background-color: red;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    flex-direction: column;
+    //align-items: center;
+    justify-content: space-between;
+    gap: 16px;
 }
+
+
 
 .main__container__frame__3 {
     width: 1200px;
@@ -124,15 +127,81 @@
     justify-content: center;
 }
 
-//Title styles
+.title__text__block {
+    background-color: white;
+    padding: 0 24px 0 24px;
+}
 
+
+.features-section {
+    background-color: purple;
+    display: flex;
+    justify-content: space-between;
+    padding: 24px;
+    gap: 16px;
+}
+
+// Global Card styles
+.feature-card {
+    height: 143px;
+    border-radius: 12px;
+    border: 1px;
+    background-color: orange;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 24px;
+    gap: 16px;
+}
+.feature-card__description {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+.feature-card__title {
+    display: flex;
+    gap: 12px;
+
+    img {
+        width: 20px;
+        height: 20px;
+    }
+}
+
+
+
+// Global Button styles
+.button__follow-the-link {
+    width: 48px;
+    height: 48px;
+    background-color: grey;
+    border: none;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header__menu__button:hover,
+.header__frame__2 button:hover,
+.header__menu__button:active,
+.button__follow-the-link:hover {
+    background-color: $button-hover-background-color;
+}
+
+.header__menu__button:hover svg,
+.header__menu__button:hover img {
+    filter: brightness(0) invert(1);
+}
+
+
+// Global Title styles
 .title__font {
     font-family: $title-font-family;
     font-weight: $title-font-weight;
     font-size: $title-font-size;
     line-height: $title-line-height;
-    letter-spacing: $title-letter-spacing;
-    color: $title-color;
+    letter-spacing: $title-letter-spacing;    
 }
 
 .text__font {
@@ -140,5 +209,14 @@
     font-weight: $text-font-weight;
     font-size: $text-font-size;
     line-height: $text-line-height;
+    letter-spacing: $text-letter-spacing;    
+}
+.title__font__color {
+    color: $title-color;
+}
+.text__font__color {
     color: $text-color;
+}
+.card__font__color {
+    color: $card-color;
 }
