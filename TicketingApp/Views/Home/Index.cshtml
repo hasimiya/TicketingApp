@@ -20,14 +20,38 @@
                 <h1 class="title__font title__font__color">Main actions</h1>
             </div>
 
-            <section class="features-section">
+            <section class="features-section__two__card">
                 @await Html.PartialAsync("_Feature-card")
                 @await Html.PartialAsync("_Feature-card")
             </section>
         </div>
 
         <div class="main__container__frame__3">
-            <h1>Vito Skaleto!</h1>
+            <div class="title__text__block">
+                <h1 class="title__font title__font__color">All our resources</h1>
+            </div>
+
+            <section class="features-section__two__card">
+                @await Html.PartialAsync("_Feature-card")
+                @await Html.PartialAsync("_Feature-card")
+            </section>
+
+            <section class="features-section__one__card">
+                @await Html.PartialAsync("_Feature-card")
+            </section>
+            <section class="features-section__one__card">
+                @await Html.PartialAsync("_Feature-card")
+            </section>
+            <section class="features-section__more">
+                <div class="features-section__more__frame__1">
+                    <div>
+                        <img src="~/Images/three-dots-icon.svg" alt="icon" />
+                    </div>
+                    <div>
+                        <p class="text__font text__font__color">More</p>
+                    </div>
+                </div>
+            </section>
         </div>
     </div>
 </div>

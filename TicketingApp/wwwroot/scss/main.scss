@@ -13,7 +13,6 @@
     display: flex;
     flex-direction: column;
     padding: 18px;
-    //flex-wrap: wrap;
     align-content: center;
     justify-content: space-between;
 }
@@ -51,7 +50,6 @@
     width: 32px;
     height: 32px;
     background-color: #00000099;
-    //background-color: transparent;
     border: none;
     border-radius: 8px;
     display: flex;
@@ -67,12 +65,10 @@
     margin-bottom: 58.5px;
     display: flex;
     justify-content: center;
-    //background-color: pink;
 }
 
 .main__container__frame {
     width: 1200px;
-    //background-color: purple;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -80,9 +76,6 @@
 }
 
 .main__container__frame__1 {
-    //width: 467px;
-    //height: 128px;
-    //background-color: green;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -107,12 +100,8 @@
 
 .main__container__frame__2 {
     width: 1200px;
-    height: 179px;
-    background-color: red;
     display: flex;
-    flex-direction: column;
-    //align-items: center;
-    justify-content: space-between;
+    flex-wrap: wrap;
     gap: 16px;
 }
 
@@ -120,44 +109,34 @@
 
 .main__container__frame__3 {
     width: 1200px;
-    height: 560px;
-    background-color: yellow;
     display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.title__text__block {
-    background-color: white;
-    padding: 0 24px 0 24px;
-}
-
-
-.features-section {
-    background-color: purple;
-    display: flex;
-    justify-content: space-between;
-    padding: 24px;
+    flex-wrap: wrap;
     gap: 16px;
 }
+
+
 
 // Global Card styles
 .feature-card {
-    height: 143px;
     border-radius: 12px;
-    border: 1px;
-    background-color: orange;
+    border: $border-styles;
     display: flex;
-    justify-content: space-around;
+    justify-content: start;
     align-items: center;
     padding: 24px;
     gap: 16px;
 }
+
+.feature-card:hover button {
+    background-color: $button-hover-background-color;
+}
+
 .feature-card__description {
     display: flex;
     flex-direction: column;
     gap: 12px;
 }
+
 .feature-card__title {
     display: flex;
     gap: 12px;
@@ -168,13 +147,58 @@
     }
 }
 
+.title__text__block {
+    padding: 0 24px 0 24px;
+}
 
 
+.features-section__two__card {
+    display: flex;
+    justify-content: space-between;
+    //padding: 24px;
+    gap: 16px;
+}
+
+.features-section__one__card {
+    width: 100%;
+
+    button {
+    }
+}
+
+.features-section__more {
+    width: 100%;
+    border: $border-styles;
+    border-radius: 12px;
+    display: flex;
+    //flex-direction: row;
+    justify-content: center;
+    //align-items: center;
+    gap: 8px;
+
+    img {
+        width: 20px;
+        height: 20px;
+    }
+
+    p {
+        line-height: 100%;
+    }
+}
+
+.features-section__more__frame__1 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    //align-content: center;
+    gap: 12px;
+}
 // Global Button styles
 .button__follow-the-link {
     width: 48px;
     height: 48px;
-    background-color: grey;
+    //background-color: grey;
+    background-color: transparent;
     border: none;
     border-radius: 16px;
     display: flex;
@@ -201,7 +225,7 @@
     font-weight: $title-font-weight;
     font-size: $title-font-size;
     line-height: $title-line-height;
-    letter-spacing: $title-letter-spacing;    
+    letter-spacing: $title-letter-spacing;
 }
 
 .text__font {
@@ -209,14 +233,17 @@
     font-weight: $text-font-weight;
     font-size: $text-font-size;
     line-height: $text-line-height;
-    letter-spacing: $text-letter-spacing;    
+    letter-spacing: $text-letter-spacing;
 }
+
 .title__font__color {
     color: $title-color;
 }
+
 .text__font__color {
     color: $text-color;
 }
+
 .card__font__color {
     color: $card-color;
 }
