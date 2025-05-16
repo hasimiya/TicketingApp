@@ -1,0 +1,29 @@
+﻿@import '_variables.scss';
+
+.title__font {
+    font-family: $title-font-family;
+    font-weight: $title-font-weight;
+    font-size: $title-font-size;
+    line-height: $title-line-height;
+    letter-spacing: $title-letter-spacing;
+}
+
+.text__font {
+    font-family: $text-font-family;
+    font-weight: $text-font-weight;
+    font-size: $text-font-size;
+    line-height: $text-line-height;
+    letter-spacing: $text-letter-spacing;
+}
+
+.title__font__color {
+    color: $title-color;
+}
+
+.text__font__color {
+    color: $text-color;
+}
+
+.card__font__color {
+    color: $card-color;
+}

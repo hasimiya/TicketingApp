@@ -1,52 +1,18 @@
 ﻿<div class="header">
-    <div class="header_frame_1">
+    <div class="header__frame header__frame--top">
         <div class="header__logo">
             <img src="~/Images/logo-icon.svg" />
         </div>
         <div class="header__menu">
-            <form asp-area="" asp-controller="Home" asp-action="Index">
-                <button class="header__menu__button">
-                    <svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M7.98372 1.33337C7.8771 1.33701 7.77445 1.37465 7.69075 1.44079L2.95312 5.17321C2.35182 5.64709 2
-6.3712 2 7.13675V13.5C2 13.9546 2.3788 14.3334 2.83333 14.3334H6.16666C6.62119 14.3334 7 13.9546 7
-13.5V10.1667C7 10.0684 7.06832 10 7.16666 10H8.83333C8.93167 10 8.99999 10.0684 8.99999
-10.1667V13.5C8.99999 13.9546 9.3788 14.3334 9.83333 14.3334H13.1667C13.6212 14.3334 14 13.9546 14
-13.5V7.13675C14 6.3712 13.6482 5.64709 13.0469 5.17322L8.30924 1.44079C8.21678 1.36776 8.10149 1.32971
-7.98372 1.33337ZM7.99999 2.47009L12.4284 5.95902C12.7897 6.24381 13 6.67697 13
-7.13675V13.3334H9.99999V10.1667C9.99999 9.52838 9.47164 9.00003 8.83333 9.00003H7.16666C6.52835
-9.00003 6 9.52838 6 10.1667V13.3334H3V7.13675C3 6.67697 3.21024 6.24381 3.57161 5.95902L7.99999 2.47009Z"
-                              fill-opacity="0.75" />
-                    </svg>
-                </button>
-            </form>
-
-            <form asp-area="" asp-controller="Home" asp-action="Ticket">
-                <button class="header__menu__button">
-                    <img src="~/Images/ticket-icon-2.svg" alt="icon" />
-                </button>
-            </form>
-
-            <form asp-area="" asp-controller="Home" asp-action="Privacy">
-                <button class="header__menu__button">
-                    <img src="~/Images/block-icon.svg" alt="icon" />
-                </button>
-            </form>
-
-            <form asp-area="" asp-controller="Home" asp-action="Bell">
-                <button class="header__menu__button">
-                    <img src="~/Images/bell-icon.svg" alt="icon" />
-                </button>
-            </form>
-
-            <form asp-area="" asp-controller="Home" asp-action="Settings">
-                <button class="header__menu__button">
-                    <img src="~/Images/gear-icon.svg" alt="icon" />
-                </button>
-            </form>
+            @await Html.PartialAsync("_HeaderMenuButtonPartial", ("Index", "~/Images/home-icon.svg"))
+            @await Html.PartialAsync("_HeaderMenuButtonPartial", ("Ticket", "~/Images/ticket-icon-2.svg"))
+            @await Html.PartialAsync("_HeaderMenuButtonPartial", ("Privacy", "~/Images/block-icon.svg"))
+            @await Html.PartialAsync("_HeaderMenuButtonPartial", ("Bell", "~/Images/bell-icon.svg"))
+            @await Html.PartialAsync("_HeaderMenuButtonPartial", ("Settings", "~/Images/gear-icon.svg"))
         </div>
     </div>
-    <div class="header__frame__2">
-        <button>
+    <div class="header__frame header__frame--bottom">
+        <button class="base-button header__menu__button">
             <img src="~/Images/N.svg" />
         </button>
     </div>

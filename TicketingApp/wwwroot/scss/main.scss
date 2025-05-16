@@ -1,113 +1,132 @@
 @import 'variables';
+@import '_mixins.scss';
+@import '_fonts.scss';
 
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
-
+//// HEADER
 .header {
     height: 100vh;
     width: 68px;
     background-color: $header-background-color;
     display: flex;
     flex-direction: column;
-    padding: 18px;
     align-content: center;
     justify-content: space-between;
-}
+    padding: 18px;
 
-.header_frame_1 {
-    width: 32px;
-    height: 248px;
-}
+    &__frame {
+        width: 32px;
 
-.header__logo, .header__logo img {
-    width: 32px;
-    height: 32px;
-    margin-bottom: 24px;
-}
+        &--top {
+            height: 248px;
+        }
 
-.header__menu {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: start;
-    gap: 8px;
-}
+        &--bottom {
+            height: 32px;
 
-.header__menu__button {
-    width: 32px;
-    height: 32px;
-    background-color: transparent;
-    border: none;
-    border-radius: 8px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.header__frame__2 button {
-    width: 32px;
-    height: 32px;
-    background-color: #00000099;
-    border: none;
-    border-radius: 8px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-// main__container
-
-.main__container {
-    width: 1852px;
-    margin-top: 58.5px;
-    margin-bottom: 58.5px;
-    display: flex;
-    justify-content: center;
-}
-
-.main__container__frame {
-    width: 1200px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 48px;
-}
-
-.main__container__frame__1 {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    gap: 16px;
-
-    h1 {
-        text-align: center;
+            button {
+                @include base-button;
+                background-color: #00000099;
+                border-radius: 8px;
+            }
+        }
     }
 
-    button {
-        width: 64px;
-        height: 64px;
+    &__logo {
+        width: 32px;
+        height: 32px;
+        margin-bottom: 24px;
+
+        img {
+            width: 32px;
+            height: 32px;
+        }
     }
 
-    img {
-        width: 15px;
-        height: 20px;
+    &__menu {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+
+        &__button {
+            @include base-button;
+            background-color: transparent;
+            border-radius: 8px;
+
+            &:hover, active {
+                background-color: $button-hover-background-color;
+            }
+
+            &:hover svg, &:hover img {
+                filter: brightness(0) invert(1);
+            }
+        }
     }
 }
 
+// MAIN
 
-.main__container__frame__2 {
-    width: 1200px;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 16px;
+.main {
+    &__container {
+        width: 1852px;
+        margin-top: 58.5px;
+        margin-bottom: 58.5px;
+        display: flex;
+        justify-content: center;
+
+        &__frame {
+            width: 1200px;
+            display: flex;
+            flex-direction: column;
+            //flex-wrap: wrap;
+            //justify-content: center;
+            gap: 48px;
+
+            &__1 {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: space-between;
+                gap: 16px;
+
+                h1 {
+                    text-align: center;
+                }
+
+                button {
+                    @include base-button;
+                    background-color: #00000099;
+                    border-radius: 8px;
+                    width: 64px;
+                    height: 64px;
+
+                    &:hover, active {
+                        background-color: $button-hover-background-color;
+                    }
+                }
+
+                img {
+                    width: 15px;
+                    height: 20px;
+                }
+            }
+
+            &__2, &__3 {
+                width: 1200px;
+                display: flex;
+                flex-wrap: wrap;
+                gap: 16px;
+            }
+        }
+    }
 }
 
 
-
-.main__container__frame__3 {
+.main__container__frame__2, main__container__frame__3 {
     width: 1200px;
     display: flex;
     flex-wrap: wrap;
@@ -121,50 +140,54 @@
     border-radius: 12px;
     border: $border-styles;
     display: flex;
-    justify-content: start;
+    justify-content: space-between;
     align-items: center;
     padding: 24px;
     gap: 16px;
-}
 
-.feature-card:hover button {
-    background-color: $button-hover-background-color;
-}
+    &:hover button {
+        background-color: $button-hover-background-color;
+    }
 
-.feature-card__description {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-}
+    &__description {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+    }
 
-.feature-card__title {
-    display: flex;
-    gap: 12px;
+    &__title {
+        display: flex;
+        gap: 12px;
 
-    img {
-        width: 20px;
-        height: 20px;
+        img {
+            width: 20px;
+            height: 20px;
+        }
     }
 }
+
+
 
 .title__text__block {
     padding: 0 24px 0 24px;
 }
 
+.features-section {
+    &__card {
+        display: flex;
+        //width: 100%;
+        justify-content: space-between;
+        //padding: 24px;
+        gap: 16px;
+    }
 
-.features-section__two__card {
-    display: flex;
-    justify-content: space-between;
-    //padding: 24px;
-    gap: 16px;
-}
-
-.features-section__one__card {
-    width: 100%;
-
-    button {
+    &__one__card {
+        width: 100%;
     }
 }
+
+
+
 
 .features-section__more {
     width: 100%;
@@ -181,18 +204,31 @@
         height: 20px;
     }
 
+    &:hover div {
+        background-color: $button-hover-background-color;
+        border-radius: 8px;
+    }
+
+    &:hover svg, &:hover img {
+        filter: brightness(0) invert(1);
+    }
+
     p {
         line-height: 100%;
     }
+
+    &__frame__1 {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        //align-content: center;
+        gap: 12px;
+        padding: 0 10px 0 10px;
+    }
 }
 
-.features-section__more__frame__1 {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    //align-content: center;
-    gap: 12px;
-}
+
+
 // Global Button styles
 .button__follow-the-link {
     width: 48px;
@@ -204,46 +240,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
-}
 
-.header__menu__button:hover,
-.header__frame__2 button:hover,
-.header__menu__button:active,
-.button__follow-the-link:hover {
-    background-color: $button-hover-background-color;
-}
-
-.header__menu__button:hover svg,
-.header__menu__button:hover img {
-    filter: brightness(0) invert(1);
-}
-
-
-// Global Title styles
-.title__font {
-    font-family: $title-font-family;
-    font-weight: $title-font-weight;
-    font-size: $title-font-size;
-    line-height: $title-line-height;
-    letter-spacing: $title-letter-spacing;
-}
-
-.text__font {
-    font-family: $text-font-family;
-    font-weight: $text-font-weight;
-    font-size: $text-font-size;
-    line-height: $text-line-height;
-    letter-spacing: $text-letter-spacing;
-}
-
-.title__font__color {
-    color: $title-color;
-}
-
-.text__font__color {
-    color: $text-color;
-}
-
-.card__font__color {
-    color: $card-color;
+    &:hover {
+        background-color: $button-hover-background-color;
+    }
 }

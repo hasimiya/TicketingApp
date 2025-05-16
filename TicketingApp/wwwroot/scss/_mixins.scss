@@ -1,0 +1,21 @@
+﻿@import 'variables.scss';
+
+@mixin base-button( $width: 32px, $heigth: 32px, $border-radius: 8px, $background-color: transparent) {
+    width: $width;
+    height: $heigth;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: $border-radius;
+    background-color: $background-color;
+}
+
+//@mixin title__font {
+//    font-family: $title-font-family;
+//    font-weight: $title-font-weight;
+//    font-size: $title-font-size;
+//    line-height: $title-line-height;
+//    letter-spacing: $title-letter-spacing;
+//    color: $title-color;
+//}

@@ -1,0 +1,7 @@
+﻿@model (string Action, string IconPath)
+
+<form asp-area="" asp-controller="Home" asp-action="@Model.Action">
+    <button class="header__menu__button">
+        <img src="@Url.Content(Model.IconPath)" alt="icon" />
+    </button>
+</form>

@@ -3,8 +3,8 @@
 }
 <div class="main__container">
     <div class="main__container__frame">
-        <div class="main__container__frame__1">
-            <div class="header__frame__2">
+        <div class="main__container__frame main__container__frame__1">
+            <div>
                 <button>
                     <img src="~/Images/N.svg" />
                 </button>
@@ -15,23 +15,23 @@
             </div>
         </div>
 
-        <div class="main__container__frame__2">
+        <div class="main__container__frame main__container__frame__2">
             <div class="title__text__block">
                 <h1 class="title__font title__font__color">Main actions</h1>
             </div>
 
-            <section class="features-section__two__card">
+            <section class="features-section__card">
                 @await Html.PartialAsync("_Feature-card")
                 @await Html.PartialAsync("_Feature-card")
             </section>
         </div>
 
-        <div class="main__container__frame__3">
+        <div class="main__container__frame main__container__frame__3">
             <div class="title__text__block">
                 <h1 class="title__font title__font__color">All our resources</h1>
             </div>
 
-            <section class="features-section__two__card">
+            <section class="features-section__card">
                 @await Html.PartialAsync("_Feature-card")
                 @await Html.PartialAsync("_Feature-card")
             </section>
