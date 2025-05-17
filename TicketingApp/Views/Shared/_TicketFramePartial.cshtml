@@ -1,0 +1,23 @@
+﻿@model (string StatusClass, bool IsActive)
+<div class="ticket-card">
+        <div class="ticket-card__header">
+            @* header-ticket *@
+            <button class="@(Model.IsActive ? Model.StatusClass : "solved")"> @(Model.IsActive ? "Opened" : "Solved")</button>
+            <div class="ticket-card__header-number">
+                <img src="~/Images/ticket-icon.svg" />
+                <p>#19</p>
+            </div>
+        </div>
+        <div class="ticket-card__info">
+            @* info-ticket *@
+            <div class="ticket-card__description">
+                <h1>The button doesn't work</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam eleifend quis quam...</p>
+            </div>
+            <div class="ticket-card__publication">
+                <p>Created:</p>
+                <p>18 August 2024</p>
+            </div>
+        </div>
+    
+</div>

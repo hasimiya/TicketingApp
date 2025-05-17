@@ -7,10 +7,14 @@
     margin: 0;
     padding: 0;
 }
+
+.container {
+    @include base-contanier;
+}
 //// HEADER
 .header {
-    height: 100vh;
     width: 68px;
+    height: 100vh;
     background-color: $header-background-color;
     display: flex;
     flex-direction: column;
@@ -72,11 +76,11 @@
 
 .main {
     &__container {
-        width: 1852px;
         margin-top: 58.5px;
         margin-bottom: 58.5px;
-        display: flex;
+        @include base-contanier;
         justify-content: center;
+        //background-color: pink;
 
         &__frame {
             width: 1200px;
@@ -85,6 +89,16 @@
             //flex-wrap: wrap;
             //justify-content: center;
             gap: 48px;
+
+            h1 {
+                @include text__styles;
+                @include title__font;
+            }
+
+            p {
+                @include text__styles;
+                letter-spacing: 100%;
+            }
 
             &__1 {
                 display: flex;
@@ -138,7 +152,7 @@
 // Global Card styles
 .feature-card {
     border-radius: 12px;
-    border: $border-styles;
+    border: $border-styles__card;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -159,9 +173,32 @@
         display: flex;
         gap: 12px;
 
+        p {
+            @include text__styles;
+            @include title__font;
+            color: $card-color;
+        }
+
         img {
             width: 20px;
             height: 20px;
+        }
+    }
+
+    &__text {
+        @include text__styles;
+        line-height: 100%;
+    }
+
+    button {
+        @include base-button;
+        background-color: transparent;
+        border-radius: 16px;
+        width: 48px;
+        height: 48px;
+
+        &:hover, active {
+            background-color: $button-hover-background-color;
         }
     }
 }
@@ -191,7 +228,7 @@
 
 .features-section__more {
     width: 100%;
-    border: $border-styles;
+    border: $border-styles__card;
     border-radius: 12px;
     display: flex;
     //flex-direction: row;
@@ -214,6 +251,7 @@
     }
 
     p {
+        @include text__styles;
         line-height: 100%;
     }
 
@@ -227,21 +265,189 @@
     }
 }
 
+// TICKET__SIDEBAR
+.main__container-ticket {
+    @include base-contanier;
+    height: 100vh;
+    gap: 506px;
 
+    &__chat {
+        @include flex-column;
+        gap: 24px;
+        justify-content: center;
+        align-items: center;
+        //background-color: pink;
+        width: 420px;
 
-// Global Button styles
-.button__follow-the-link {
-    width: 48px;
-    height: 48px;
-    //background-color: grey;
-    background-color: transparent;
-    border: none;
-    border-radius: 16px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+        img {
+            width: 50px;
+            height: 50px;
+        }
 
-    &:hover {
-        background-color: $button-hover-background-color;
+        p {
+            @include text__styles;
+            font-size: 16px;
+            line-height: 1;
+            color: rgba(0, 0, 0, 0.8);
+        }
     }
+}
+
+.ticket-sidebar {
+    width: 420px;
+    height: 100vh;
+    @include flex-column;
+    //flex-wrap: wrap;
+    justify-content: start;
+    border-right: $border-styles__ticket-sidebar;
+    padding: 18px;
+    gap: 24px;
+
+    &__frame {
+        @include flex-column;
+        justify-content: start;
+        gap: 12px;
+    }
+
+    &__action {
+        width: 384px;
+        height: 104px;
+        @include flex-column;
+        gap: 12px;
+
+        button {
+            @include text__styles;
+            font-size: 16px;
+            line-height: 100%;
+
+            &:hover, active {
+                background-color: white;
+                color: rgba(0, 0, 0, 1);
+            }
+        }
+    }
+
+    &__status {
+        @include flex-row;
+        border-radius: 12px;
+        padding: 4px;
+        background-color: rgba(244, 244, 245, 1);
+        gap: 12px;
+
+        button {
+            @include base-button;
+            width: 100%;
+            height: 36px;
+            border-radius: 8px;
+        }
+    }
+
+    &__create {
+        border-radius: 12px;
+        padding: 4px;
+        background-color: rgba(244, 244, 245, 1);
+        gap: 12px;
+
+        button {
+            @include base-button;
+            width: 100%;
+            height: 48px;
+            border-radius: 8px;
+            padding: 4px;
+        }
+    }
+
+    &__info {
+        width: 384px;
+        height: 916px;
+        @include flex-column;
+    }
+}
+// TICKET__CARD
+.ticket-card {
+    border-radius: 12px;
+    border: $border-styles__card;
+    padding: 18px;
+    @include flex-column;
+    justify-content: start;
+    gap: 18px;
+
+    &__header {
+        @include flex-row;        
+
+        button {
+            @include base-button;
+            width: 61px;
+            height: 26px;
+            //background-color: $background-button__status;
+            @include text__styles;
+            font-weight: 300;
+            font-size: 12px;
+            line-height: 100%;
+            letter-spacing: 0px;
+            //color: $text-color__status;
+        }
+
+        .ticket-card__header-number {
+            //width:
+            padding: 5px;
+            @include flex-row;
+            align-items: center;
+            gap: 6px;
+            @include text__styles;
+            font-weight: 300;
+            font-size: 12px;
+            line-height: 100%;
+            letter-spacing: 0px;
+
+            img {
+                width: 16px;
+                height: 16px;
+            }
+        }
+    }
+
+    &__info {
+        @include flex-column;
+        gap: 12px;
+    }
+
+    &__description {
+        @include flex-column;
+        gap: 6px;
+
+        h1 {
+            @include text__styles;
+            font-size: 16px;
+            line-height: 100%;
+            color: $card-color;
+        }
+
+        p {
+            @include text__styles;
+            font-size: 12px;
+            line-height: 1.5;
+        }
+    }
+
+    &__publication {
+        @include flex-row;
+        justify-content: start;
+        gap: 4px;
+        @include text__styles;
+        font-weight: 300;
+        font-size: 12px;
+        line-height: 1;
+        color: rgba(0, 0, 0, 0.45);
+    }
+}
+
+button.opened {
+    background-color: $background-button__status-opened;
+    color: $text-color__status-opened;
+}
+
+button.solved {
+    background-color: $background-button__status-solved;
+    color: $text-color__status-solved;
 }

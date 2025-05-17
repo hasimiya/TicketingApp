@@ -11,11 +11,47 @@
     background-color: $background-color;
 }
 
-//@mixin title__font {
-//    font-family: $title-font-family;
-//    font-weight: $title-font-weight;
-//    font-size: $title-font-size;
-//    line-height: $title-line-height;
-//    letter-spacing: $title-letter-spacing;
-//    color: $title-color;
-//}
+@mixin base-contanier {
+    width: 1852px;
+    display: flex;
+}
+
+@mixin flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@mixin flex-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+@mixin flex-column {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+// text__styles
+
+@mixin text__styles {
+    font-family: $text-styles__font-family;
+    font-weight: $text-font-weight;
+    font-size: $text-font-size;
+    line-height: $text-line-height;
+    letter-spacing: $text-letter-spacing;
+    color: $text-color;
+}
+@mixin title__font {
+    font-weight: $title-font-weight;
+    font-size: $title-font-size;
+    line-height: $title-line-height;
+    color: $title-color;
+}
+@mixin text__font_ {
+    font-weight: $text-font-weight;
+    font-size: $text-font-size;
+    line-height: $text-line-height;
+    color: $text-color;
+}
