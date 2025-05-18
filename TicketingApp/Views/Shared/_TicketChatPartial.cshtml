@@ -16,7 +16,7 @@
     <div class="ticket-chat__main">
         <div class="ticket-chat__main-frame">
             <div class="ticket-chat__main__header">
-                <div>
+                <div class="ticket-chat__main__header-title">
                     <p>Summary</p>
                     <h1>Slingshot maneuver helper microservice</h1>
                 </div>
@@ -38,12 +38,14 @@
                 </div>
                 <div class="chat-main__content">
                     <div class="chat-main__content__section-1">
-                        @await Html.PartialAsync("_MessagePartial") 
-                        @await Html.PartialAsync("_MessagePartial")
+                        @await Html.PartialAsync("_MessageUserPartial") 
+                        @await Html.PartialAsync("_MessageUserPartial")
                     </div>
 
                     <div class="chat-main__content__section-2">
-
+                        @await Html.PartialAsync("_MessageFromUserPartial")
+                        @await Html.PartialAsync("_MessageFromUserPartial")
+                        @await Html.PartialAsync("_MessageFromUserPartial")
                     </div>
                 </div>
             </div>

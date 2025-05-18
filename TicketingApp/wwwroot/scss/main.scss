@@ -386,6 +386,11 @@
         &__header {
             @include flex-row;
 
+            &-title {
+                @include flex-column;
+                gap: 6px;
+            }
+
             h1 {
                 @include text__styles;
                 @include title__font;
@@ -441,7 +446,11 @@
             }
 
             .chat-main__content {
-                &__section-1 {
+                @include flex-column;
+                justify-content: start;
+                gap: 24px;
+
+                &__section-1, &__section-2 {
                     width: 100%;
                     @include flex-column;
                     flex-wrap: wrap;
@@ -451,31 +460,78 @@
 
                     .user-me {
                         display: inline-flex;
-                        align-items: end;
-                        max-width: 700px;
+                        justify-content: start;
+                        gap: 12px;
                         width: auto;
                         border-radius: 12px;
-                        padding: 18px;
+                        //padding: 18px;
                         background-color: purple;
-
-                        p {
-                            white-space: normal;
-                            word-break: break-word;
-                        }
+                        //p {
+                        //    white-space: normal;
+                        //    word-break: break-word;
+                        //}
 
 
                         &__logo {
                             @include flex-center;
                             width: 44px;
                             height: 44px;
+                            border-radius: 12px;
                             background-color: rgba(0, 0, 0, 0.05);
 
+                            p {
+                                @include text__styles;
+                                @include title__font;
+                                font-size: 16px;
+                                line-height: 100%;
+                                padding: 10px 12.5px 10px 12.5px;
+                                color: rgba(255, 255, 255, 1);
+                            }
+
                             img {
-                                width: 16px;
-                                height: 16px;
+                                width: 24px;
+                                height: 24px;
+                            }
+                        }
+
+                        .user__send-message {
+                            @include flex-column;
+                            justify-content: start;
+                            gap: 6px;
+                            max-width: 700px;
+                            padding: 18px;
+                            border-radius: 6px;
+                            background-color: rgba(232, 241, 255, 1);
+
+                            p {
+                                @include text__styles;
+                            }
+
+                            .user__send-time {
+                                @include flex-row;
+                                justify-content: start;
+                                gap: 12px;
+
+                                h1 {
+                                    @include text__styles;
+                                    @include title__font;
+                                    font-size: 16px;
+                                    line-height: 18px;
+                                }
+
+                                p {
+                                    @include text__styles;
+                                    font-size: 12px;
+                                    line-height: 18px;
+                                    color: rgba(0, 0, 0, 0.4);
+                                }
                             }
                         }
                     }
+                }
+
+                &__section-2 {
+                    align-items: start;
                 }
             }
         }

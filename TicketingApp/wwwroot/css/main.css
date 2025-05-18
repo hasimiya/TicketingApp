@@ -388,6 +388,12 @@
   flex-direction: row;
   justify-content: space-between;
 }
+.ticket-chat__main__header-title {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 6px;
+}
 .ticket-chat__main__header h1 {
   font-family: "Poppins", sans-serif;
   font-weight: 400;
@@ -457,7 +463,14 @@
   line-height: 100%;
   color: rgb(0, 0, 0);
 }
-.ticket-chat__main__content-frame .chat-main__content__section-1 {
+.ticket-chat__main__content-frame .chat-main__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  justify-content: start;
+  gap: 24px;
+}
+.ticket-chat__main__content-frame .chat-main__content__section-1, .ticket-chat__main__content-frame .chat-main__content__section-2 {
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -467,30 +480,96 @@
   gap: 6px;
   background-color: pink;
 }
-.ticket-chat__main__content-frame .chat-main__content__section-1 .user-me {
+.ticket-chat__main__content-frame .chat-main__content__section-1 .user-me, .ticket-chat__main__content-frame .chat-main__content__section-2 .user-me {
   display: inline-flex;
-  align-items: end;
-  max-width: 700px;
+  justify-content: start;
+  gap: 12px;
   width: auto;
   border-radius: 12px;
-  padding: 18px;
   background-color: purple;
 }
-.ticket-chat__main__content-frame .chat-main__content__section-1 .user-me p {
-  white-space: normal;
-  word-break: break-word;
-}
-.ticket-chat__main__content-frame .chat-main__content__section-1 .user-me__logo {
+.ticket-chat__main__content-frame .chat-main__content__section-1 .user-me__logo, .ticket-chat__main__content-frame .chat-main__content__section-2 .user-me__logo {
   display: flex;
   align-items: center;
   justify-content: center;
   width: 44px;
   height: 44px;
+  border-radius: 12px;
   background-color: rgba(0, 0, 0, 0.05);
 }
-.ticket-chat__main__content-frame .chat-main__content__section-1 .user-me__logo img {
-  width: 16px;
-  height: 16px;
+.ticket-chat__main__content-frame .chat-main__content__section-1 .user-me__logo p, .ticket-chat__main__content-frame .chat-main__content__section-2 .user-me__logo p {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 24px;
+  letter-spacing: 0px;
+  color: rgba(0, 0, 0, 0.65);
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 20px;
+  color: rgba(0, 0, 0, 0.85);
+  font-size: 16px;
+  line-height: 100%;
+  padding: 10px 12.5px 10px 12.5px;
+  color: rgb(255, 255, 255);
+}
+.ticket-chat__main__content-frame .chat-main__content__section-1 .user-me__logo img, .ticket-chat__main__content-frame .chat-main__content__section-2 .user-me__logo img {
+  width: 24px;
+  height: 24px;
+}
+.ticket-chat__main__content-frame .chat-main__content__section-1 .user-me .user__send-message, .ticket-chat__main__content-frame .chat-main__content__section-2 .user-me .user__send-message {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  justify-content: start;
+  gap: 6px;
+  max-width: 700px;
+  padding: 18px;
+  border-radius: 6px;
+  background-color: rgb(232, 241, 255);
+}
+.ticket-chat__main__content-frame .chat-main__content__section-1 .user-me .user__send-message p, .ticket-chat__main__content-frame .chat-main__content__section-2 .user-me .user__send-message p {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 24px;
+  letter-spacing: 0px;
+  color: rgba(0, 0, 0, 0.65);
+}
+.ticket-chat__main__content-frame .chat-main__content__section-1 .user-me .user__send-message .user__send-time, .ticket-chat__main__content-frame .chat-main__content__section-2 .user-me .user__send-message .user__send-time {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  justify-content: start;
+  gap: 12px;
+}
+.ticket-chat__main__content-frame .chat-main__content__section-1 .user-me .user__send-message .user__send-time h1, .ticket-chat__main__content-frame .chat-main__content__section-2 .user-me .user__send-message .user__send-time h1 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 24px;
+  letter-spacing: 0px;
+  color: rgba(0, 0, 0, 0.65);
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 20px;
+  color: rgba(0, 0, 0, 0.85);
+  font-size: 16px;
+  line-height: 18px;
+}
+.ticket-chat__main__content-frame .chat-main__content__section-1 .user-me .user__send-message .user__send-time p, .ticket-chat__main__content-frame .chat-main__content__section-2 .user-me .user__send-message .user__send-time p {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 24px;
+  letter-spacing: 0px;
+  color: rgba(0, 0, 0, 0.65);
+  font-size: 12px;
+  line-height: 18px;
+  color: rgba(0, 0, 0, 0.4);
+}
+.ticket-chat__main__content-frame .chat-main__content__section-2 {
+  align-items: start;
 }
 
 .ticket-sidebar {
