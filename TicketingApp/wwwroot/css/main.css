@@ -1,15 +1,3 @@
-.title__font__color {
-  color: rgba(0, 0, 0, 0.85);
-}
-
-.text__font__color {
-  color: rgba(0, 0, 0, 0.65);
-}
-
-.card__font__color {
-  color: rgb(0, 0, 0);
-}
-
 * {
   box-sizing: border-box;
   margin: 0;
@@ -279,25 +267,39 @@
 }
 
 .main__container-ticket {
-  width: 1852px;
   display: flex;
+}
+.main__container-ticket__frame {
+  width: 1432px;
   height: 100vh;
-  gap: 506px;
+  background-color: pink;
 }
 .main__container-ticket__chat {
   display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1432px;
+}
+
+.main__contanier-ticket__frame {
+  width: 1432px;
+  height: 100vh;
+}
+
+.ticket-chat__null {
+  display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  gap: 24px;
   justify-content: center;
   align-items: center;
+  gap: 24px;
   width: 420px;
+  height: 100vh;
 }
-.main__container-ticket__chat img {
+.ticket-chat__null img {
   width: 50px;
   height: 50px;
 }
-.main__container-ticket__chat p {
+.ticket-chat__null p {
   font-family: "Poppins", sans-serif;
   font-weight: 400;
   font-size: 14px;
@@ -308,6 +310,188 @@
   line-height: 1;
   color: rgba(0, 0, 0, 0.8);
 }
+.ticket-chat__completed {
+  width: 1052px;
+  height: 100vh;
+  background-color: purple;
+}
+.ticket-chat__header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 1052px;
+  padding: 24px 32px 24px 32px;
+  background-color: green;
+}
+.ticket-chat__header-url {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 253px;
+  background-color: pink;
+}
+.ticket-chat__header-url .ticket-url {
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
+  padding: 6px;
+  background-color: rgb(244, 244, 245);
+}
+.ticket-chat__header-url img {
+  width: 16px;
+  height: 16px;
+}
+.ticket-chat__header-url p {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 24px;
+  letter-spacing: 0px;
+  color: rgba(0, 0, 0, 0.65);
+  font-size: 16px;
+  line-height: 100%;
+  color: rgba(0, 0, 0, 0.4);
+}
+.ticket-chat__header-url .ticket-number {
+  border-radius: 8px;
+  padding: 6px;
+  background-color: rgb(244, 244, 245);
+}
+.ticket-chat__header-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  background-color: yellow;
+}
+.ticket-chat__header-actions img {
+  width: 18px;
+  height: 18px;
+}
+.ticket-chat__main {
+  width: 1052px;
+  height: 1002px;
+  background-color: red;
+  padding: 24px 32px 24px 32px;
+}
+.ticket-chat__main-frame {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  justify-content: start;
+  background-color: orange;
+  gap: 24px;
+}
+.ticket-chat__main__header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.ticket-chat__main__header h1 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 24px;
+  letter-spacing: 0px;
+  color: rgba(0, 0, 0, 0.65);
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 20px;
+  color: rgba(0, 0, 0, 0.85);
+}
+.ticket-chat__main__header p {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 24px;
+  letter-spacing: 0px;
+  color: rgba(0, 0, 0, 0.65);
+  font-size: 12px;
+  line-height: 100%;
+  color: rgba(0, 0, 0, 0.45);
+}
+.ticket-chat__main__header .chat-main__actions {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 8px;
+}
+.ticket-chat__main__header .chat-main__actions button {
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border-radius: 6px;
+  padding: 10px 12px 10px 12px;
+  background-color: rgba(0, 0, 0, 0.05);
+}
+.ticket-chat__main__header .chat-main__actions button:hover {
+  background-color: rgb(13, 110, 253);
+}
+.ticket-chat__main__header .chat-main__actions button img {
+  width: 16px;
+  height: 16px;
+}
+.ticket-chat__main__content-frame {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  justify-content: start;
+  gap: 24px;
+}
+.ticket-chat__main__content-frame .chat-main__content-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.ticket-chat__main__content-frame .chat-main__content-title p {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 24px;
+  letter-spacing: 0px;
+  color: rgba(0, 0, 0, 0.65);
+  font-weight: 300;
+  line-height: 100%;
+  color: rgb(0, 0, 0);
+}
+.ticket-chat__main__content-frame .chat-main__content__section-1 {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: end;
+  gap: 6px;
+  background-color: pink;
+}
+.ticket-chat__main__content-frame .chat-main__content__section-1 .user-me {
+  display: inline-flex;
+  align-items: end;
+  max-width: 700px;
+  width: auto;
+  border-radius: 12px;
+  padding: 18px;
+  background-color: purple;
+}
+.ticket-chat__main__content-frame .chat-main__content__section-1 .user-me p {
+  white-space: normal;
+  word-break: break-word;
+}
+.ticket-chat__main__content-frame .chat-main__content__section-1 .user-me__logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  background-color: rgba(0, 0, 0, 0.05);
+}
+.ticket-chat__main__content-frame .chat-main__content__section-1 .user-me__logo img {
+  width: 16px;
+  height: 16px;
+}
 
 .ticket-sidebar {
   width: 420px;
@@ -316,8 +500,8 @@
   flex-direction: column;
   justify-content: space-between;
   justify-content: start;
-  border-right: 1px solid rgb(255, 255, 255);
   padding: 18px;
+  border-right: 1px solid rgba(0, 0, 0, 0.1);
   gap: 24px;
 }
 .ticket-sidebar__frame {
@@ -409,22 +593,24 @@
   justify-content: start;
   gap: 18px;
 }
+.ticket-card__link-wrapper {
+  text-decoration-line: none;
+}
+.ticket-card__link-wrapper:hover .ticket-card, .ticket-card__link-wrapper active .ticket-card {
+  border: 1px solid rgba(0, 0, 0, 0.25);
+}
 .ticket-card__header {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 }
-.ticket-card__header button {
-  width: 32px;
-  height: 32px;
-  border: none;
+.ticket-card__header-status {
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 8px;
-  background-color: transparent;
   width: 61px;
   height: 26px;
+  border-radius: 8px;
   font-family: "Poppins", sans-serif;
   font-weight: 400;
   font-size: 14px;
@@ -509,12 +695,12 @@
   color: rgba(0, 0, 0, 0.45);
 }
 
-button.opened {
+.ticket-card__header-status.opened {
   background-color: rgb(232, 241, 255);
   color: rgb(0, 112, 255);
 }
 
-button.solved {
+.ticket-card__header-status.solved {
   background-color: rgb(238, 249, 243);
   color: rgb(27, 103, 67);
 }

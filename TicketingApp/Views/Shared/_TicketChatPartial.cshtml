@@ -1,0 +1,52 @@
+﻿<div class="ticket-chat__completed">
+    <div class="ticket-chat__header">
+        <div class="ticket-chat__header-url">
+            <div class="ticket-url">
+                <img src="~/Images/url-icon.svg" alt="icon" />
+            </div>
+            <p>Tickets / Personal /</p>
+            <p class="ticket-number">#19</p>
+        </div>
+        <div class="ticket-chat__header-actions">
+            <img src="~/Images/star-icon.svg" alt="icon" />
+            <img src="~/Images/social-icon.svg" alt="icon" />
+            <img src="~/Images/three-dots-icon-black.svg" alt="icon" />
+        </div>
+    </div>
+    <div class="ticket-chat__main">
+        <div class="ticket-chat__main-frame">
+            <div class="ticket-chat__main__header">
+                <div>
+                    <p>Summary</p>
+                    <h1>Slingshot maneuver helper microservice</h1>
+                </div>
+                <div class="chat-main__actions">
+                    <button>
+                        <img src="~/Images/link-icon.svg" />
+                        Connect ticket
+                    </button>
+                    <button>
+                        <img src="~/Images/close-icon.svg" />
+                        Close ticket
+                    </button>
+                </div>
+            </div>
+
+            <div class="ticket-chat__main__content-frame">
+                <div class="chat-main__content-title">
+                    <p>Today 2:45 PM</p>
+                </div>
+                <div class="chat-main__content">
+                    <div class="chat-main__content__section-1">
+                        @await Html.PartialAsync("_MessagePartial") 
+                        @await Html.PartialAsync("_MessagePartial")
+                    </div>
+
+                    <div class="chat-main__content__section-2">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

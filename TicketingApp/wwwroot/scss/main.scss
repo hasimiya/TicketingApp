@@ -149,7 +149,7 @@
 
 
 
-// Global Card styles
+// FEATURE CARD
 .feature-card {
     border-radius: 12px;
     border: $border-styles__card;
@@ -265,19 +265,40 @@
     }
 }
 
-// TICKET__SIDEBAR
+// TICKET
 .main__container-ticket {
-    @include base-contanier;
-    height: 100vh;
-    gap: 506px;
+    display: flex;
+
+    &__frame {
+        width: 1432px;
+        height: 100vh;
+        background-color: pink;
+    }
 
     &__chat {
-        @include flex-column;
-        gap: 24px;
+        @include flex-center;
+        //background-color: pink;
+        width: 1432px;
+    }
+}
+
+.main__contanier-ticket__frame {
+    width: 1432px;
+    height: 100vh;
+    //background-color: pink;
+}
+
+// TICKET CHAT
+.ticket-chat {
+    &__null {
+        display: flex;
+        flex-direction: column;
         justify-content: center;
         align-items: center;
-        //background-color: pink;
+        gap: 24px;
         width: 420px;
+        height: 100vh;
+        //background-color: red;
 
         img {
             width: 50px;
@@ -291,7 +312,177 @@
             color: rgba(0, 0, 0, 0.8);
         }
     }
+
+    &__completed {
+        width: 1052px;
+        height: 100vh;
+        background-color: purple;
+    }
+    // TICKET CHAT HEADER
+    &__header {
+        @include flex-row;
+        width: 1052px;
+        padding: 24px 32px 24px 32px;
+        background-color: green;
+
+        &-url {
+            @include flex-row;
+            align-items: center;
+            width: 253px;
+            background-color: pink;
+
+            .ticket-url {
+                width: 28px;
+                height: 28px;
+                border-radius: 8px;
+                padding: 6px;
+                background-color: rgba(244, 244, 245, 1);
+            }
+
+            img {
+                width: 16px;
+                height: 16px;
+            }
+
+            p {
+                @include text__styles;
+                font-size: 16px;
+                line-height: 100%;
+                color: $text-color__url-ticket;
+            }
+
+            .ticket-number {
+                border-radius: 8px;
+                padding: 6px;
+                background-color: rgba(244, 244, 245, 1);
+            }
+        }
+
+        &-actions {
+            @include flex-center;
+            gap: 24px;
+            background-color: yellow;
+
+            img {
+                width: 18px;
+                height: 18px;
+            }
+        }
+    }
+    // TICKET CHAT MAIN
+    &__main {
+        width: 1052px;
+        height: 1002px;
+        background-color: red;
+        padding: 24px 32px 24px 32px;
+
+        &-frame {
+            @include flex-column;
+            justify-content: start;
+            background-color: orange;
+            gap: 24px;
+        }
+
+        &__header {
+            @include flex-row;
+
+            h1 {
+                @include text__styles;
+                @include title__font;
+            }
+
+            p {
+                @include text__styles;
+                font-size: 12px;
+                line-height: 100%;
+                color: rgba(0, 0, 0, 0.45);
+            }
+
+            .chat-main__actions {
+                @include flex-row;
+                gap: 8px;
+
+                button {
+                    border: none;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    gap: 8px;
+                    border-radius: 6px;
+                    padding: 10px 12px 10px 12px;
+                    background-color: rgba(0, 0, 0, 0.05);
+
+                    &:hover {
+                        background-color: rgba(13, 110, 253, 1);
+                    }
+
+                    img {
+                        width: 16px;
+                        height: 16px;
+                    }
+                }
+            }
+        }
+        // CHAT CONTENT
+        &__content-frame {
+            @include flex-column;
+            justify-content: start;
+            gap: 24px;
+
+            .chat-main__content-title {
+                @include flex-center;
+
+                p {
+                    @include text__styles;
+                    font-weight: 300;
+                    line-height: 100%;
+                    color: rgba(0, 0, 0, 1);
+                }
+            }
+
+            .chat-main__content {
+                &__section-1 {
+                    width: 100%;
+                    @include flex-column;
+                    flex-wrap: wrap;
+                    align-items: end;
+                    gap: 6px;
+                    background-color: pink;
+
+                    .user-me {
+                        display: inline-flex;
+                        align-items: end;
+                        max-width: 700px;
+                        width: auto;
+                        border-radius: 12px;
+                        padding: 18px;
+                        background-color: purple;
+
+                        p {
+                            white-space: normal;
+                            word-break: break-word;
+                        }
+
+
+                        &__logo {
+                            @include flex-center;
+                            width: 44px;
+                            height: 44px;
+                            background-color: rgba(0, 0, 0, 0.05);
+
+                            img {
+                                width: 16px;
+                                height: 16px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
+
+// TICKET__SIDEBAR
 
 .ticket-sidebar {
     width: 420px;
@@ -299,8 +490,9 @@
     @include flex-column;
     //flex-wrap: wrap;
     justify-content: start;
-    border-right: $border-styles__ticket-sidebar;
+    //background-color: rgba(255, 255, 255, 1);
     padding: 18px;
+    border-right: $border-styles__card;
     gap: 24px;
 
     &__frame {
@@ -371,21 +563,33 @@
     @include flex-column;
     justify-content: start;
     gap: 18px;
+    //&:hover {
+    //    border: 1px solid rgba(0, 0, 0, 0.25);
+    //}
+
+    &__link-wrapper {
+        text-decoration-line: none;
+
+        &:hover .ticket-card, active .ticket-card {
+            border: 1px solid rgba(0, 0, 0, 0.25);
+        }
+    }
 
     &__header {
-        @include flex-row;        
+        @include flex-row;
 
-        button {
-            @include base-button;
+        &-status {
+            //@include base-button;
+            @include flex-center;
             width: 61px;
             height: 26px;
-            //background-color: $background-button__status;
+            //background-color: red;
+            border-radius: 8px;
             @include text__styles;
             font-weight: 300;
             font-size: 12px;
             line-height: 100%;
             letter-spacing: 0px;
-            //color: $text-color__status;
         }
 
         .ticket-card__header-number {
@@ -442,12 +646,12 @@
     }
 }
 
-button.opened {
+.ticket-card__header-status.opened {
     background-color: $background-button__status-opened;
     color: $text-color__status-opened;
 }
 
-button.solved {
+.ticket-card__header-status.solved {
     background-color: $background-button__status-solved;
     color: $text-color__status-solved;
 }
