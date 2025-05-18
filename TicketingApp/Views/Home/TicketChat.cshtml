@@ -4,9 +4,13 @@
 <div class="main__container-ticket">
     @await Html.PartialAsync("_TicketSidebarPartial")
     <div class="main__container-ticket__frame">
+        <div>
         @* Частичное представление чата *@
         @await Html.PartialAsync("_TicketChatPartial")
+        </div>
+        <div>
         @* Частичное представление деталей *@
         @await Html.PartialAsync("_TicketDetailsPartial")
+        </div>
     </div>    
 </div>

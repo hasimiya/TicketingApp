@@ -7,6 +7,11 @@
     margin: 0;
     padding: 0;
 }
+//html, body {
+//    height: 100%;
+//    margin: 0;
+//    padding: 0;
+//}
 
 .container {
     @include base-contanier;
@@ -80,14 +85,11 @@
         margin-bottom: 58.5px;
         @include base-contanier;
         justify-content: center;
-        //background-color: pink;
 
         &__frame {
             width: 1200px;
             display: flex;
             flex-direction: column;
-            //flex-wrap: wrap;
-            //justify-content: center;
             gap: 48px;
 
             h1 {
@@ -231,9 +233,7 @@
     border: $border-styles__card;
     border-radius: 12px;
     display: flex;
-    //flex-direction: row;
     justify-content: center;
-    //align-items: center;
     gap: 8px;
 
     img {
@@ -259,7 +259,6 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        //align-content: center;
         gap: 12px;
         padding: 0 10px 0 10px;
     }
@@ -268,28 +267,82 @@
 // TICKET
 .main__container-ticket {
     display: flex;
+    height: 100%;
+
 
     &__frame {
         width: 1432px;
-        height: 100vh;
-        background-color: pink;
+        display: flex;
+        flex-direction: row;
+        height: 100%;
     }
 
     &__chat {
+        width: 100%;
         @include flex-center;
-        //background-color: pink;
         width: 1432px;
     }
 }
 
-.main__contanier-ticket__frame {
-    width: 1432px;
-    height: 100vh;
-    //background-color: pink;
-}
+
 
 // TICKET CHAT
 .ticket-chat {
+    // TICKET CHAT DETAILS
+    &__wrapper-details {
+        @include flex-column;
+        justify-content: start;
+        width: 380px;
+        height: 100%;
+
+        .details__header {
+            padding: 18px;
+
+            p {
+                @include text__styles;
+                @include title__font;
+                font-size: 16px;
+                line-height: 100%;
+            }
+        }
+
+        .details__main {
+            @include flex-column;
+            justify-content: start;
+            gap: 12px;
+            padding: 24px;
+
+            &-row {
+                @include flex-row;
+            }
+
+            h1 {
+                @include text__styles;
+                @include title__font;
+                font-size: 16px;
+                line-height: 100%;
+                color: rgba(0, 0, 0, 0.4);
+            }
+
+            p {
+                @include text__styles;
+                font-size: 16px;
+                line-height: 100%;
+                color: rgba(0, 0, 0, 0.85);
+            }
+
+            .text-status {
+                @include text__styles;
+                font-size: 12px;
+                line-height: 100%;
+                color: rgba(0, 112, 255, 1);
+                border-radius: 8px;
+                padding: 4px 6px 4px 6px;
+                background-color: rgba(232, 241, 255, 1);
+            }
+        }
+    }
+    // TICEK CHAT EMPTY
     &__null {
         display: flex;
         flex-direction: column;
@@ -298,7 +351,6 @@
         gap: 24px;
         width: 420px;
         height: 100vh;
-        //background-color: red;
 
         img {
             width: 50px;
@@ -315,21 +367,17 @@
 
     &__completed {
         width: 1052px;
-        height: 100vh;
-        background-color: purple;
     }
     // TICKET CHAT HEADER
     &__header {
         @include flex-row;
         width: 1052px;
         padding: 24px 32px 24px 32px;
-        background-color: green;
 
         &-url {
             @include flex-row;
             align-items: center;
             width: 253px;
-            background-color: pink;
 
             .ticket-url {
                 width: 28px;
@@ -361,7 +409,6 @@
         &-actions {
             @include flex-center;
             gap: 24px;
-            background-color: yellow;
 
             img {
                 width: 18px;
@@ -372,15 +419,16 @@
     // TICKET CHAT MAIN
     &__main {
         width: 1052px;
-        height: 1002px;
-        background-color: red;
+        height: 100%;
         padding: 24px 32px 24px 32px;
 
         &-frame {
             @include flex-column;
+            height: 956px;
             justify-content: start;
-            background-color: orange;
             gap: 24px;
+            flex: 1;
+            overflow: hidden;
         }
 
         &__header {
@@ -407,6 +455,10 @@
                 @include flex-row;
                 gap: 8px;
 
+                .close-icon img {
+                    filter: invert(1);
+                }
+
                 button {
                     border: none;
                     display: flex;
@@ -419,6 +471,11 @@
 
                     &:hover {
                         background-color: rgba(13, 110, 253, 1);
+                        color: white;
+
+                        img {
+                            filter: brightness(0) invert(1);
+                        }
                     }
 
                     img {
@@ -431,7 +488,8 @@
         // CHAT CONTENT
         &__content-frame {
             @include flex-column;
-            justify-content: start;
+            flex: 1;
+            overflow: hidden;
             gap: 24px;
 
             .chat-main__content-title {
@@ -446,30 +504,24 @@
             }
 
             .chat-main__content {
-                @include flex-column;
-                justify-content: start;
-                gap: 24px;
-
                 &__section-1, &__section-2 {
                     width: 100%;
                     @include flex-column;
                     flex-wrap: wrap;
                     align-items: end;
                     gap: 6px;
-                    background-color: pink;
 
-                    .user-me {
+                    .user-me, .user-from {
                         display: inline-flex;
                         justify-content: start;
                         gap: 12px;
                         width: auto;
                         border-radius: 12px;
-                        //padding: 18px;
-                        background-color: purple;
-                        //p {
-                        //    white-space: normal;
-                        //    word-break: break-word;
-                        //}
+
+                        p {
+                            white-space: normal;
+                            word-break: break-word;
+                        }
 
 
                         &__logo {
@@ -528,10 +580,72 @@
                             }
                         }
                     }
+
+                    .user-from__logo {
+                        background-color: rgba(37, 39, 43, 1);
+                    }
                 }
 
                 &__section-2 {
                     align-items: start;
+                }
+
+                &__section-3 {
+                    @include flex-column;
+                    width: 100%;
+                    height: 44px;
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    right: 0;
+                    height: 44px;
+                    z-index: 10;
+
+                    .entering-messages {
+                        @include flex-row;
+                        gap: 6px;
+
+
+                        .input-text {
+                            @include text__styles;
+                            flex: 1;
+                            padding: 5px;
+                            border-radius: 8px;
+                            border: 1px solid rgba(0, 0, 0, 0.1)
+                        }
+
+                        input::placeholder {
+                            @include text__styles;
+                            font-size: 12px;
+                            line-height: 100%;
+                            color: rgba(27, 45, 74, 0.65);
+                        }
+
+                        .btn__add-file {
+                            @include base-button;
+                            width: 44px;
+                            height: 44px;
+
+                            &:hover {
+                                background-color: rgba(13, 110, 253, 0.5);
+
+                                img {
+                                    filter: invert(1);
+                                }
+                            }
+                        }
+
+                        .btn__send-message {
+                            @include base-button;
+                            width: 44px;
+                            height: 44px;
+                            background-color: rgba(13, 110, 253, 1);
+
+                            &:hover {
+                                background-color: rgba(13, 110, 253, 0.5);
+                            }
+                        }
+                    }
                 }
             }
         }
@@ -619,9 +733,6 @@
     @include flex-column;
     justify-content: start;
     gap: 18px;
-    //&:hover {
-    //    border: 1px solid rgba(0, 0, 0, 0.25);
-    //}
 
     &__link-wrapper {
         text-decoration-line: none;
@@ -639,7 +750,6 @@
             @include flex-center;
             width: 61px;
             height: 26px;
-            //background-color: red;
             border-radius: 8px;
             @include text__styles;
             font-weight: 300;
@@ -710,4 +820,170 @@
 .ticket-card__header-status.solved {
     background-color: $background-button__status-solved;
     color: $text-color__status-solved;
+}
+
+
+.chat-wrapper {
+    @include flex-column;
+    flex: 1;
+    overflow: hidden;
+    position: relative;
+}
+
+.chat-content {
+    height: 837px;
+    @include flex-column;
+    justify-content: start;
+    gap: 24px;
+}
+
+// TICKET CREATE
+.ticket-create {
+    &__wrapper {
+        width: 100%;
+    }
+
+    &__header {
+        padding: 18px 32px 18px 32px;
+    }
+
+    &__url {
+        p {
+            @include text__styles;
+            font-size: 16px;
+            line-height: 100%;
+            color: $text-color__url-ticket;
+        }
+    }
+
+    &__main {
+        width: 900px;
+        height: 694px;
+        margin: 100px auto 0;
+    }
+
+    &__content {
+        @include flex-column;
+        justify-content: start;
+        gap: 24px;
+
+        &-btn button {
+            @include base-button;
+            width: 100%;
+            height: 44px;
+            border-radius: 8px;
+            background: rgba(13, 110, 253, 1);
+            @include text__styles;
+            @include title__font;
+            font-size: 12px;
+            color: rgba(255, 255, 255, 1);
+        }
+
+        &-title {
+            h1 {
+                @include text__styles;
+                @include title__font;
+                font-size: 16px;
+                line-height: 100%;
+                color: rgba(0, 0, 0, 1);
+            }
+
+            p {
+                @include text__styles;
+                font-weight: 300;
+                font-size: 12px;
+                line-height: 100%;
+                color: rgba(0, 0, 0, 0.4);
+            }
+        }
+
+        &-form {
+            @include flex-column;
+            justify-content: start;
+            gap: 12px;
+            width: 100%;
+            height: 560px;
+
+            h1 {
+                @include text__styles;
+                @include title__font;
+                font-size: 12px;
+                line-height: 100%;
+                color: rgba(0, 0, 0, 1);
+            }
+
+            .input-text {
+                width: 100%;
+                @include text__styles;
+                flex: 1;
+                padding: 5px;
+                border-radius: 8px;
+                border: 1px solid rgba(0, 0, 0, 0.1)
+            }
+
+            input::placeholder {
+                @include text__styles;
+                font-size: 12px;
+                line-height: 100%;
+                color: rgba(0, 0, 0, 0.4);
+            }
+        }
+
+        .form-input {
+            @include flex-column;
+            justify-content: start;
+            width: 100%;
+            gap: 6px;
+            //background-color: pink;
+
+            .input-description {
+                @include text__styles;
+                height: 200px;
+                padding: 5px;
+                border-radius: 8px;
+                border: 1px solid rgba(0, 0, 0, 0.1)
+            }
+
+            .upload-file {
+                @include flex-center;
+                gap: 12px;
+                width: 900px;
+                height: 48px;
+                border-radius: 8px;
+                border: 1px solid rgba(0, 0, 0, 0.1);
+                //background: red;
+
+                p {
+                    @include text__styles;
+                    font-size: 12px;
+                    line-height: 100%;
+                    color: rgba(0, 0, 0, 0.4);
+                }
+
+                &__add {
+                    @include flex-row;
+                    padding: 6px 12px 6px 12px;
+                }
+
+                &__info {
+                    @include flex-row;
+                    gap: 12px;
+
+                    h1 {
+                        @include text__styles;
+                        font-size: 10px;
+                        line-height: 100%;
+                        color: rgba(0, 0, 0, 0.4)
+                    }
+
+                    p {
+                        @include text__styles;
+                        font-size: 12px;
+                        line-height: 100%;
+                        color: rgba(0, 0, 0, 1);
+                    }
+                }
+            }
+        }
+    }
 }

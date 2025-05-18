@@ -268,24 +268,100 @@
 
 .main__container-ticket {
   display: flex;
+  height: 100%;
 }
 .main__container-ticket__frame {
   width: 1432px;
-  height: 100vh;
-  background-color: pink;
+  display: flex;
+  flex-direction: row;
+  height: 100%;
 }
 .main__container-ticket__chat {
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
   width: 1432px;
 }
 
-.main__contanier-ticket__frame {
-  width: 1432px;
-  height: 100vh;
+.ticket-chat__wrapper-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  justify-content: start;
+  width: 380px;
+  height: 100%;
 }
-
+.ticket-chat__wrapper-details .details__header {
+  padding: 18px;
+}
+.ticket-chat__wrapper-details .details__header p {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 24px;
+  letter-spacing: 0px;
+  color: rgba(0, 0, 0, 0.65);
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 20px;
+  color: rgba(0, 0, 0, 0.85);
+  font-size: 16px;
+  line-height: 100%;
+}
+.ticket-chat__wrapper-details .details__main {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  justify-content: start;
+  gap: 12px;
+  padding: 24px;
+}
+.ticket-chat__wrapper-details .details__main-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.ticket-chat__wrapper-details .details__main h1 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 24px;
+  letter-spacing: 0px;
+  color: rgba(0, 0, 0, 0.65);
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 20px;
+  color: rgba(0, 0, 0, 0.85);
+  font-size: 16px;
+  line-height: 100%;
+  color: rgba(0, 0, 0, 0.4);
+}
+.ticket-chat__wrapper-details .details__main p {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 24px;
+  letter-spacing: 0px;
+  color: rgba(0, 0, 0, 0.65);
+  font-size: 16px;
+  line-height: 100%;
+  color: rgba(0, 0, 0, 0.85);
+}
+.ticket-chat__wrapper-details .details__main .text-status {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 24px;
+  letter-spacing: 0px;
+  color: rgba(0, 0, 0, 0.65);
+  font-size: 12px;
+  line-height: 100%;
+  color: rgb(0, 112, 255);
+  border-radius: 8px;
+  padding: 4px 6px 4px 6px;
+  background-color: rgb(232, 241, 255);
+}
 .ticket-chat__null {
   display: flex;
   flex-direction: column;
@@ -312,8 +388,6 @@
 }
 .ticket-chat__completed {
   width: 1052px;
-  height: 100vh;
-  background-color: purple;
 }
 .ticket-chat__header {
   display: flex;
@@ -321,7 +395,6 @@
   justify-content: space-between;
   width: 1052px;
   padding: 24px 32px 24px 32px;
-  background-color: green;
 }
 .ticket-chat__header-url {
   display: flex;
@@ -329,7 +402,6 @@
   justify-content: space-between;
   align-items: center;
   width: 253px;
-  background-color: pink;
 }
 .ticket-chat__header-url .ticket-url {
   width: 28px;
@@ -363,7 +435,6 @@
   align-items: center;
   justify-content: center;
   gap: 24px;
-  background-color: yellow;
 }
 .ticket-chat__header-actions img {
   width: 18px;
@@ -371,17 +442,18 @@
 }
 .ticket-chat__main {
   width: 1052px;
-  height: 1002px;
-  background-color: red;
+  height: 100%;
   padding: 24px 32px 24px 32px;
 }
 .ticket-chat__main-frame {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  height: 956px;
   justify-content: start;
-  background-color: orange;
   gap: 24px;
+  flex: 1;
+  overflow: hidden;
 }
 .ticket-chat__main__header {
   display: flex;
@@ -423,6 +495,9 @@
   justify-content: space-between;
   gap: 8px;
 }
+.ticket-chat__main__header .chat-main__actions .close-icon img {
+  filter: invert(1);
+}
 .ticket-chat__main__header .chat-main__actions button {
   border: none;
   display: flex;
@@ -435,6 +510,10 @@
 }
 .ticket-chat__main__header .chat-main__actions button:hover {
   background-color: rgb(13, 110, 253);
+  color: white;
+}
+.ticket-chat__main__header .chat-main__actions button:hover img {
+  filter: brightness(0) invert(1);
 }
 .ticket-chat__main__header .chat-main__actions button img {
   width: 16px;
@@ -444,7 +523,8 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  justify-content: start;
+  flex: 1;
+  overflow: hidden;
   gap: 24px;
 }
 .ticket-chat__main__content-frame .chat-main__content-title {
@@ -463,13 +543,6 @@
   line-height: 100%;
   color: rgb(0, 0, 0);
 }
-.ticket-chat__main__content-frame .chat-main__content {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  justify-content: start;
-  gap: 24px;
-}
 .ticket-chat__main__content-frame .chat-main__content__section-1, .ticket-chat__main__content-frame .chat-main__content__section-2 {
   width: 100%;
   display: flex;
@@ -478,17 +551,19 @@
   flex-wrap: wrap;
   align-items: end;
   gap: 6px;
-  background-color: pink;
 }
-.ticket-chat__main__content-frame .chat-main__content__section-1 .user-me, .ticket-chat__main__content-frame .chat-main__content__section-2 .user-me {
+.ticket-chat__main__content-frame .chat-main__content__section-1 .user-me, .ticket-chat__main__content-frame .chat-main__content__section-1 .user-from, .ticket-chat__main__content-frame .chat-main__content__section-2 .user-me, .ticket-chat__main__content-frame .chat-main__content__section-2 .user-from {
   display: inline-flex;
   justify-content: start;
   gap: 12px;
   width: auto;
   border-radius: 12px;
-  background-color: purple;
 }
-.ticket-chat__main__content-frame .chat-main__content__section-1 .user-me__logo, .ticket-chat__main__content-frame .chat-main__content__section-2 .user-me__logo {
+.ticket-chat__main__content-frame .chat-main__content__section-1 .user-me p, .ticket-chat__main__content-frame .chat-main__content__section-1 .user-from p, .ticket-chat__main__content-frame .chat-main__content__section-2 .user-me p, .ticket-chat__main__content-frame .chat-main__content__section-2 .user-from p {
+  white-space: normal;
+  word-break: break-word;
+}
+.ticket-chat__main__content-frame .chat-main__content__section-1 .user-me__logo, .ticket-chat__main__content-frame .chat-main__content__section-1 .user-from__logo, .ticket-chat__main__content-frame .chat-main__content__section-2 .user-me__logo, .ticket-chat__main__content-frame .chat-main__content__section-2 .user-from__logo {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -497,7 +572,7 @@
   border-radius: 12px;
   background-color: rgba(0, 0, 0, 0.05);
 }
-.ticket-chat__main__content-frame .chat-main__content__section-1 .user-me__logo p, .ticket-chat__main__content-frame .chat-main__content__section-2 .user-me__logo p {
+.ticket-chat__main__content-frame .chat-main__content__section-1 .user-me__logo p, .ticket-chat__main__content-frame .chat-main__content__section-1 .user-from__logo p, .ticket-chat__main__content-frame .chat-main__content__section-2 .user-me__logo p, .ticket-chat__main__content-frame .chat-main__content__section-2 .user-from__logo p {
   font-family: "Poppins", sans-serif;
   font-weight: 400;
   font-size: 14px;
@@ -513,11 +588,11 @@
   padding: 10px 12.5px 10px 12.5px;
   color: rgb(255, 255, 255);
 }
-.ticket-chat__main__content-frame .chat-main__content__section-1 .user-me__logo img, .ticket-chat__main__content-frame .chat-main__content__section-2 .user-me__logo img {
+.ticket-chat__main__content-frame .chat-main__content__section-1 .user-me__logo img, .ticket-chat__main__content-frame .chat-main__content__section-1 .user-from__logo img, .ticket-chat__main__content-frame .chat-main__content__section-2 .user-me__logo img, .ticket-chat__main__content-frame .chat-main__content__section-2 .user-from__logo img {
   width: 24px;
   height: 24px;
 }
-.ticket-chat__main__content-frame .chat-main__content__section-1 .user-me .user__send-message, .ticket-chat__main__content-frame .chat-main__content__section-2 .user-me .user__send-message {
+.ticket-chat__main__content-frame .chat-main__content__section-1 .user-me .user__send-message, .ticket-chat__main__content-frame .chat-main__content__section-1 .user-from .user__send-message, .ticket-chat__main__content-frame .chat-main__content__section-2 .user-me .user__send-message, .ticket-chat__main__content-frame .chat-main__content__section-2 .user-from .user__send-message {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -528,7 +603,7 @@
   border-radius: 6px;
   background-color: rgb(232, 241, 255);
 }
-.ticket-chat__main__content-frame .chat-main__content__section-1 .user-me .user__send-message p, .ticket-chat__main__content-frame .chat-main__content__section-2 .user-me .user__send-message p {
+.ticket-chat__main__content-frame .chat-main__content__section-1 .user-me .user__send-message p, .ticket-chat__main__content-frame .chat-main__content__section-1 .user-from .user__send-message p, .ticket-chat__main__content-frame .chat-main__content__section-2 .user-me .user__send-message p, .ticket-chat__main__content-frame .chat-main__content__section-2 .user-from .user__send-message p {
   font-family: "Poppins", sans-serif;
   font-weight: 400;
   font-size: 14px;
@@ -536,14 +611,14 @@
   letter-spacing: 0px;
   color: rgba(0, 0, 0, 0.65);
 }
-.ticket-chat__main__content-frame .chat-main__content__section-1 .user-me .user__send-message .user__send-time, .ticket-chat__main__content-frame .chat-main__content__section-2 .user-me .user__send-message .user__send-time {
+.ticket-chat__main__content-frame .chat-main__content__section-1 .user-me .user__send-message .user__send-time, .ticket-chat__main__content-frame .chat-main__content__section-1 .user-from .user__send-message .user__send-time, .ticket-chat__main__content-frame .chat-main__content__section-2 .user-me .user__send-message .user__send-time, .ticket-chat__main__content-frame .chat-main__content__section-2 .user-from .user__send-message .user__send-time {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   justify-content: start;
   gap: 12px;
 }
-.ticket-chat__main__content-frame .chat-main__content__section-1 .user-me .user__send-message .user__send-time h1, .ticket-chat__main__content-frame .chat-main__content__section-2 .user-me .user__send-message .user__send-time h1 {
+.ticket-chat__main__content-frame .chat-main__content__section-1 .user-me .user__send-message .user__send-time h1, .ticket-chat__main__content-frame .chat-main__content__section-1 .user-from .user__send-message .user__send-time h1, .ticket-chat__main__content-frame .chat-main__content__section-2 .user-me .user__send-message .user__send-time h1, .ticket-chat__main__content-frame .chat-main__content__section-2 .user-from .user__send-message .user__send-time h1 {
   font-family: "Poppins", sans-serif;
   font-weight: 400;
   font-size: 14px;
@@ -557,7 +632,7 @@
   font-size: 16px;
   line-height: 18px;
 }
-.ticket-chat__main__content-frame .chat-main__content__section-1 .user-me .user__send-message .user__send-time p, .ticket-chat__main__content-frame .chat-main__content__section-2 .user-me .user__send-message .user__send-time p {
+.ticket-chat__main__content-frame .chat-main__content__section-1 .user-me .user__send-message .user__send-time p, .ticket-chat__main__content-frame .chat-main__content__section-1 .user-from .user__send-message .user__send-time p, .ticket-chat__main__content-frame .chat-main__content__section-2 .user-me .user__send-message .user__send-time p, .ticket-chat__main__content-frame .chat-main__content__section-2 .user-from .user__send-message .user__send-time p {
   font-family: "Poppins", sans-serif;
   font-weight: 400;
   font-size: 14px;
@@ -568,8 +643,87 @@
   line-height: 18px;
   color: rgba(0, 0, 0, 0.4);
 }
+.ticket-chat__main__content-frame .chat-main__content__section-1 .user-from__logo, .ticket-chat__main__content-frame .chat-main__content__section-2 .user-from__logo {
+  background-color: rgb(37, 39, 43);
+}
 .ticket-chat__main__content-frame .chat-main__content__section-2 {
   align-items: start;
+}
+.ticket-chat__main__content-frame .chat-main__content__section-3 {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  height: 44px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 44px;
+  z-index: 10;
+}
+.ticket-chat__main__content-frame .chat-main__content__section-3 .entering-messages {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 6px;
+}
+.ticket-chat__main__content-frame .chat-main__content__section-3 .entering-messages .input-text {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 24px;
+  letter-spacing: 0px;
+  color: rgba(0, 0, 0, 0.65);
+  flex: 1;
+  padding: 5px;
+  border-radius: 8px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+.ticket-chat__main__content-frame .chat-main__content__section-3 .entering-messages input::placeholder {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 24px;
+  letter-spacing: 0px;
+  color: rgba(0, 0, 0, 0.65);
+  font-size: 12px;
+  line-height: 100%;
+  color: rgba(27, 45, 74, 0.65);
+}
+.ticket-chat__main__content-frame .chat-main__content__section-3 .entering-messages .btn__add-file {
+  width: 32px;
+  height: 32px;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  background-color: transparent;
+  width: 44px;
+  height: 44px;
+}
+.ticket-chat__main__content-frame .chat-main__content__section-3 .entering-messages .btn__add-file:hover {
+  background-color: rgba(13, 110, 253, 0.5);
+}
+.ticket-chat__main__content-frame .chat-main__content__section-3 .entering-messages .btn__add-file:hover img {
+  filter: invert(1);
+}
+.ticket-chat__main__content-frame .chat-main__content__section-3 .entering-messages .btn__send-message {
+  width: 32px;
+  height: 32px;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  background-color: transparent;
+  width: 44px;
+  height: 44px;
+  background-color: rgb(13, 110, 253);
+}
+.ticket-chat__main__content-frame .chat-main__content__section-3 .entering-messages .btn__send-message:hover {
+  background-color: rgba(13, 110, 253, 0.5);
 }
 
 .ticket-sidebar {
@@ -782,6 +936,230 @@
 .ticket-card__header-status.solved {
   background-color: rgb(238, 249, 243);
   color: rgb(27, 103, 67);
+}
+
+.chat-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex: 1;
+  overflow: hidden;
+  position: relative;
+}
+
+.chat-content {
+  height: 837px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  justify-content: start;
+  gap: 24px;
+}
+
+.ticket-create__wrapper {
+  width: 100%;
+}
+.ticket-create__header {
+  padding: 18px 32px 18px 32px;
+}
+.ticket-create__url p {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 24px;
+  letter-spacing: 0px;
+  color: rgba(0, 0, 0, 0.65);
+  font-size: 16px;
+  line-height: 100%;
+  color: rgba(0, 0, 0, 0.4);
+}
+.ticket-create__main {
+  width: 900px;
+  height: 694px;
+  margin: 100px auto 0;
+}
+.ticket-create__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  justify-content: start;
+  gap: 24px;
+}
+.ticket-create__content-btn button {
+  width: 32px;
+  height: 32px;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  background-color: transparent;
+  width: 100%;
+  height: 44px;
+  border-radius: 8px;
+  background: rgb(13, 110, 253);
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 24px;
+  letter-spacing: 0px;
+  color: rgba(0, 0, 0, 0.65);
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 20px;
+  color: rgba(0, 0, 0, 0.85);
+  font-size: 12px;
+  color: rgb(255, 255, 255);
+}
+.ticket-create__content-title h1 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 24px;
+  letter-spacing: 0px;
+  color: rgba(0, 0, 0, 0.65);
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 20px;
+  color: rgba(0, 0, 0, 0.85);
+  font-size: 16px;
+  line-height: 100%;
+  color: rgb(0, 0, 0);
+}
+.ticket-create__content-title p {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 24px;
+  letter-spacing: 0px;
+  color: rgba(0, 0, 0, 0.65);
+  font-weight: 300;
+  font-size: 12px;
+  line-height: 100%;
+  color: rgba(0, 0, 0, 0.4);
+}
+.ticket-create__content-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  justify-content: start;
+  gap: 12px;
+  width: 100%;
+  height: 560px;
+}
+.ticket-create__content-form h1 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 24px;
+  letter-spacing: 0px;
+  color: rgba(0, 0, 0, 0.65);
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 20px;
+  color: rgba(0, 0, 0, 0.85);
+  font-size: 12px;
+  line-height: 100%;
+  color: rgb(0, 0, 0);
+}
+.ticket-create__content-form .input-text {
+  width: 100%;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 24px;
+  letter-spacing: 0px;
+  color: rgba(0, 0, 0, 0.65);
+  flex: 1;
+  padding: 5px;
+  border-radius: 8px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+.ticket-create__content-form input::placeholder {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 24px;
+  letter-spacing: 0px;
+  color: rgba(0, 0, 0, 0.65);
+  font-size: 12px;
+  line-height: 100%;
+  color: rgba(0, 0, 0, 0.4);
+}
+.ticket-create__content .form-input {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  justify-content: start;
+  width: 100%;
+  gap: 6px;
+}
+.ticket-create__content .form-input .input-description {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 24px;
+  letter-spacing: 0px;
+  color: rgba(0, 0, 0, 0.65);
+  height: 200px;
+  padding: 5px;
+  border-radius: 8px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+.ticket-create__content .form-input .upload-file {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  width: 900px;
+  height: 48px;
+  border-radius: 8px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+.ticket-create__content .form-input .upload-file p {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 24px;
+  letter-spacing: 0px;
+  color: rgba(0, 0, 0, 0.65);
+  font-size: 12px;
+  line-height: 100%;
+  color: rgba(0, 0, 0, 0.4);
+}
+.ticket-create__content .form-input .upload-file__add {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 6px 12px 6px 12px;
+}
+.ticket-create__content .form-input .upload-file__info {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 12px;
+}
+.ticket-create__content .form-input .upload-file__info h1 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 24px;
+  letter-spacing: 0px;
+  color: rgba(0, 0, 0, 0.65);
+  font-size: 10px;
+  line-height: 100%;
+  color: rgba(0, 0, 0, 0.4);
+}
+.ticket-create__content .form-input .upload-file__info p {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 24px;
+  letter-spacing: 0px;
+  color: rgba(0, 0, 0, 0.65);
+  font-size: 12px;
+  line-height: 100%;
+  color: rgb(0, 0, 0);
 }
 
 /*# sourceMappingURL=main.css.map */

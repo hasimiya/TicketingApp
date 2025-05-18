@@ -1,0 +1,9 @@
+﻿@{
+    ViewData["Title"] = "Ticket Create";
+}
+<div class="main__container-ticket">
+    @await Html.PartialAsync("_TicketSidebarPartial")
+    <div class="main__container-ticket__frame">
+            @await Html.PartialAsync("_TicketCreatePartial")
+    </div>
+</div>

@@ -25,8 +25,8 @@
                         <img src="~/Images/link-icon.svg" />
                         Connect ticket
                     </button>
-                    <button>
-                        <img src="~/Images/close-icon.svg" />
+                    <button class="close-icon">
+                        <img src="~/Images/close-icon.svg"/>
                         Close ticket
                     </button>
                 </div>
@@ -36,18 +36,24 @@
                 <div class="chat-main__content-title">
                     <p>Today 2:45 PM</p>
                 </div>
-                <div class="chat-main__content">
-                    <div class="chat-main__content__section-1">
-                        @await Html.PartialAsync("_MessageUserPartial") 
-                        @await Html.PartialAsync("_MessageUserPartial")
-                    </div>
-
-                    <div class="chat-main__content__section-2">
-                        @await Html.PartialAsync("_MessageFromUserPartial")
-                        @await Html.PartialAsync("_MessageFromUserPartial")
-                        @await Html.PartialAsync("_MessageFromUserPartial")
-                    </div>
+                <div class="chat-wrapper">
+            <div class="chat-content">
+                <div class="chat-main__content__section-1">
+                    @await Html.PartialAsync("_MessageUserPartial")
+                    @await Html.PartialAsync("_MessageUserPartial")
                 </div>
+
+                <div class="chat-main__content__section-2">
+                    @await Html.PartialAsync("_MessageFromUserPartial")
+                    @await Html.PartialAsync("_MessageFromUserPartial")
+                    @await Html.PartialAsync("_MessageFromUserPartial")
+                </div>
+            </div>
+
+            <div class="chat-main__content__section-3">
+                @await Html.PartialAsync("_EnteringMessagesPartial")
+            </div>
+        </div>
             </div>
         </div>
     </div>

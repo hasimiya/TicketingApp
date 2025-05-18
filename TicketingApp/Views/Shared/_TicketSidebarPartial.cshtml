@@ -6,13 +6,15 @@
             <button>Opened</button>
         </div>
         <div class="ticket-sidebar__create">
-            <button>Create New +</button>
-        </div>
+            <a class="ticket-card__link-wrapper" asp-controller="Home" asp-action="TicketCreate">
+                <button>Create New +</button>
+            </a>
+</div>
     </div>
     <div class="ticket-sidebar__frame">
         @await Html.PartialAsync("_TicketFramePartial", ("opened", true))
         @await Html.PartialAsync("_TicketFramePartial", ("opened", true))
-        @await Html.PartialAsync("_TicketFramePartial", ("solved", false))
+        @await Html.PartialAsync("_TicketFramePartial", ("opened", false))
         @await Html.PartialAsync("_TicketFramePartial", ("solved", false))
         @await Html.PartialAsync("_TicketFramePartial", ("solved", false))
     </div>
