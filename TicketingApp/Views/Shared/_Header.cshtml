@@ -1,14 +1,53 @@
-﻿<div class="header">
+﻿@{
+    var currentController = ViewContext.RouteData.Values["controller"].ToString();
+    var currentAction = ViewContext.RouteData.Values["action"].ToString();
+}
+<div class="header">
     <div class="header__frame header__frame--top">
         <div class="header__logo">
             <img src="~/Images/logo-icon.svg" />
         </div>
         <div class="header__menu">
-            @await Html.PartialAsync("_HeaderMenuButtonPartial", ("Index", "~/Images/home-icon.svg"))
-            @await Html.PartialAsync("_HeaderMenuButtonPartial", ("Ticket", "~/Images/ticket-icon-2.svg"))
-            @await Html.PartialAsync("_HeaderMenuButtonPartial", ("Privacy", "~/Images/block-icon.svg"))
-            @await Html.PartialAsync("_HeaderMenuButtonPartial", ("Bell", "~/Images/bell-icon.svg"))
-            @await Html.PartialAsync("_HeaderMenuButtonPartial", ("Settings", "~/Images/gear-icon.svg"))
+            @await Html.PartialAsync("_HeaderMenuButtonPartial", (new MenuModel
+       {
+           Action = "Index",
+           IconPath = "~/Images/home-icon.svg",
+           CurrentController = currentController,
+           CurrentAction = currentAction
+
+       }))
+            @await Html.PartialAsync("_HeaderMenuButtonPartial", (new MenuModel
+       {
+           Action = "Ticket",
+           IconPath = "~/Images/ticket-icon-2.svg",
+           CurrentController = currentController,
+           CurrentAction = currentAction
+
+       }))
+            @await Html.PartialAsync("_HeaderMenuButtonPartial", (new MenuModel
+{
+Action = "Privacy",
+IconPath = "~/Images/block-icon.svg",
+CurrentController = currentController,
+CurrentAction = currentAction
+
+}))
+            @await Html.PartialAsync("_HeaderMenuButtonPartial", (new MenuModel
+{
+Action = "Bell",
+IconPath = "~/Images/bell-icon.svg",
+CurrentController = currentController,
+CurrentAction = currentAction
+
+}))
+            @await Html.PartialAsync("_HeaderMenuButtonPartial", (new MenuModel
+{
+Action = "Settings",
+IconPath = "~/Images/gear-icon.svg",
+CurrentController = currentController,
+CurrentAction = currentAction
+
+}))
         </div>
     </div>
     <div class="header__frame header__frame--bottom">

@@ -1,21 +1,23 @@
-﻿<div class="ticket-sidebar">
+﻿@using TicketingApp.Models
+@{
+    var ticketSolved = TicketRepository.GetSolvedTicket();
+}
+<div class="ticket-sidebar">
     <div class="ticket-sidebar__action">
         <div class="ticket-sidebar__status">
             <button>Tickets</button>
             <button>Solved</button>
             <button>Opened</button>
+            @*<a onclick="ticketSolved" asp-controller="Home" asp-action="TicketSolved">Solved</a>*@
         </div>
         <div class="ticket-sidebar__create">
             <a class="ticket-card__link-wrapper" asp-controller="Home" asp-action="TicketCreate">
                 <button>Create New +</button>
             </a>
-</div>
+        </div>
     </div>
     <div class="ticket-sidebar__frame">
-        @await Html.PartialAsync("_TicketFramePartial", ("opened", true))
-        @await Html.PartialAsync("_TicketFramePartial", ("opened", true))
-        @await Html.PartialAsync("_TicketFramePartial", ("opened", false))
-        @await Html.PartialAsync("_TicketFramePartial", ("solved", false))
-        @await Html.PartialAsync("_TicketFramePartial", ("solved", false))
+
+        @await Component.InvokeAsync("Ticket")
     </div>
 </div>

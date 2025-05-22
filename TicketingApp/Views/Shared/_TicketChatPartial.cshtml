@@ -8,52 +8,58 @@
             <p class="ticket-number">#19</p>
         </div>
         <div class="ticket-chat__header-actions">
-            <img src="~/Images/star-icon.svg" alt="icon" />
-            <img src="~/Images/social-icon.svg" alt="icon" />
-            <img src="~/Images/three-dots-icon-black.svg" alt="icon" />
+            <button><img src="~/Images/star-icon.svg" alt="icon" /></button>
+            <button><img src="~/Images/social-icon.svg" alt="icon" /></button>
+            <button><img src="~/Images/three-dots-icon-black.svg" alt="icon" /></button>
         </div>
     </div>
-    <div class="ticket-chat__main">
-        <div class="ticket-chat__main-frame">
-            <div class="ticket-chat__main__header">
-                <div class="ticket-chat__main__header-title">
-                    <p>Summary</p>
-                    <h1>Slingshot maneuver helper microservice</h1>
-                </div>
-                <div class="chat-main__actions">
-                    <button>
-                        <img src="~/Images/link-icon.svg" />
-                        Connect ticket
-                    </button>
-                    <button class="close-icon">
-                        <img src="~/Images/close-icon.svg"/>
-                        Close ticket
-                    </button>
-                </div>
+    <div class="ticket-chat__main-frame">
+        <div class="ticket-chat__main__header">
+            <div class="ticket-chat__main__header-title">
+                <p>Summary</p>
+                <h1>Slingshot maneuver helper microservice</h1>
             </div>
-
-            <div class="ticket-chat__main__content-frame">
-                <div class="chat-main__content-title">
-                    <p>Today 2:45 PM</p>
-                </div>
-                <div class="chat-wrapper">
-            <div class="chat-content">
-                <div class="chat-main__content__section-1">
-                    @await Html.PartialAsync("_MessageUserPartial")
-                    @await Html.PartialAsync("_MessageUserPartial")
-                </div>
-
-                <div class="chat-main__content__section-2">
-                    @await Html.PartialAsync("_MessageFromUserPartial")
-                    @await Html.PartialAsync("_MessageFromUserPartial")
-                    @await Html.PartialAsync("_MessageFromUserPartial")
-                </div>
-            </div>
-
-            <div class="chat-main__content__section-3">
-                @await Html.PartialAsync("_EnteringMessagesPartial")
+            <div class="chat-main__actions">
+                <button>
+                    <img src="~/Images/link-icon.svg" />
+                    Connect ticket
+                </button>
+                <button class="close-icon">
+                    <img src="~/Images/close-icon.svg" />
+                    Close ticket
+                </button>
             </div>
         </div>
+
+        <div class="ticket-chat__main__content-frame">
+            <div class="chat-main__content-title">
+                <p>Today 2:45 PM</p>
+            </div>
+            <div class="chat-wrapper">
+                <div class="chat-content">
+                    <div class="chat-main__content__section-1">
+                        @await Html.PartialAsync("_MessageUserPartial")
+                        @await Html.PartialAsync("_MessageUserPartial")
+
+                        @await Html.PartialAsync("_MessageUserPartial")
+                        @await Html.PartialAsync("_MessageUserPartial")
+                    </div>
+
+                    <div class="chat-main__content__section-2">
+                        @await Html.PartialAsync("_MessageFromUserPartial")
+                        @await Html.PartialAsync("_MessageFromUserPartial")
+                        @await Html.PartialAsync("_MessageFromUserPartial")
+
+                        @await Html.PartialAsync("_MessageFromUserPartial")
+                        @await Html.PartialAsync("_MessageFromUserPartial")
+                        @await Html.PartialAsync("_MessageFromUserPartial")
+
+                    </div>
+
+                </div>
+                <div class="chat-main__content__section-3">
+                    @await Html.PartialAsync("_EnteringMessagesPartial")
+                </div>
             </div>
         </div>
     </div>

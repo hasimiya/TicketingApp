@@ -1,13 +1,12 @@
 ﻿@{
     ViewData["Title"] = "Ticket Page";
 }
-@*class="main__container-ticket*@
-<div style="display:flex">
-    @await Html.PartialAsync("_TicketSidebarPartial")
-    <div class="main__container-ticket__chat">
-        <div class="ticket-chat__null">
+@await Html.PartialAsync("_TicketSidebarPartial")
+<div class="main__container-ticket__chat">
+    <div class="ticket-chat__null">
+        <button>
             <img src="~/Images/create-ticket.svg" alt="icon" />
-            <p>Select ticket or create a new one to start messaging.</p>
-        </div>
+        </button>
+        <p>Select ticket or create a new one to start messaging.</p>
     </div>
 </div>

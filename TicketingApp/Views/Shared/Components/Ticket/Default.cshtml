@@ -1,0 +1,29 @@
+﻿@model IEnumerable<TicketModel>
+
+@foreach (var ticket in Model)
+{
+    <a class="ticket-card__link-wrapper" asp-controller="Home" asp-action="TicketChat">
+        <div class="ticket-card">
+
+            <div class="ticket-card__header">
+                <div class="@(ticket.Status == "Opened" ? "opened" : "solved") ticket-card__header-status">@ticket.Status</div>
+                <div class="ticket-card__header-number">
+                    <img src="~/Images/ticket-icon.svg" />
+                    <p>#@ticket.Id</p>
+                </div>
+            </div>
+            <div class="ticket-card__info">
+                @* info-ticket *@
+                <div class="ticket-card__description">
+                    <h1>@ticket.Title</h1>
+                    <p>@ticket.Description</p>
+                </div>
+                <div class="ticket-card__publication">
+                    <p>Created:</p>
+                    <p>@ticket.Publication</p>
+                </div>
+            </div>
+
+        </div>
+    </a>
+}

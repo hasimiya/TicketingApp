@@ -8,13 +8,11 @@
 </head>
 <body>
     <div style="display: flex">
-            @await Html.PartialAsync("_Header")
-        
+        @await Html.PartialAsync("_Header")
+
         <div class="container">
-            <main role="main" class="pb-3">                
-                @RenderBody()
-            </main>
+            @RenderBody()
         </div>
-    </div>    
+    </div>
 </body>
 </html>

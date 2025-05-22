@@ -1,7 +1,10 @@
-﻿@model (string Action, string IconPath)
+﻿@model MenuModel
+@{
+    var isActive = Model.CurrentController.ToLower() == "home" && Model.CurrentAction.ToLower() == Model.Action.ToLower();
+}
 
 <form asp-area="" asp-controller="Home" asp-action="@Model.Action">
-    <button class="header__menu__button">
+    <button class="header__menu__button @(isActive ? "activeButton" : "")">
         <img src="@Url.Content(Model.IconPath)" alt="icon" />
     </button>
 </form>

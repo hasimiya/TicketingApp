@@ -12,8 +12,10 @@
 }
 
 @mixin base-contanier {
-    width: 1852px;
+    //width: 1852px;
+    width: 100%;
     display: flex;
+    margin-left: 68px;
 }
 
 @mixin flex-center {
@@ -43,12 +45,14 @@
     letter-spacing: $text-letter-spacing;
     color: $text-color;
 }
+
 @mixin title__font {
     font-weight: $title-font-weight;
     font-size: $title-font-size;
     line-height: $title-line-height;
     color: $title-color;
 }
+
 @mixin text__font_ {
     font-weight: $text-font-weight;
     font-size: $text-font-size;

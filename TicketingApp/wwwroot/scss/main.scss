@@ -1,10 +1,16 @@
 @import 'variables';
 @import '_mixins.scss';
+
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
+
+body, html {
+    overflow: hidden;
+}
+
 .container {
     @include base-contanier;
 }
@@ -18,6 +24,7 @@
     align-content: center;
     justify-content: space-between;
     padding: 18px;
+    position: fixed;
 
     &__frame {
         width: 32px;
@@ -73,13 +80,14 @@
 
 .main {
     &__container {
-        margin-top: 58.5px;
-        margin-bottom: 58.5px;
-        @include base-contanier;
+        margin: 100px 320px;
+        //@include base-contanier;
         justify-content: center;
+        width: 100%;
 
         &__frame {
-            width: 1200px;
+            //width: 1200px;
+            width: 100%;
             display: flex;
             flex-direction: column;
             gap: 48px;
@@ -124,7 +132,8 @@
             }
 
             &__2, &__3 {
-                width: 1200px;
+                //width: 1200px;
+                width: 100%;
                 display: flex;
                 flex-wrap: wrap;
                 gap: 16px;
@@ -135,7 +144,8 @@
 
 
 .main__container__frame__2, main__container__frame__3 {
-    width: 1200px;
+    //width: 1200px;
+    width: 100%;
     display: flex;
     flex-wrap: wrap;
     gap: 16px;
@@ -225,6 +235,7 @@
     display: flex;
     justify-content: center;
     gap: 8px;
+    padding: 5px;
 
     img {
         width: 20px;
@@ -234,6 +245,10 @@
     &:hover div {
         background-color: $button-hover-background-color;
         border-radius: 8px;
+
+        p {
+            color: white;
+        }
     }
 
     &:hover svg, &:hover img {
@@ -245,12 +260,23 @@
         line-height: 100%;
     }
 
-    &__frame__1 {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        gap: 12px;
-        padding: 0 10px 0 10px;
+    &:hover {
+        button {
+            background-color: $button-hover-background-color;
+            border-radius: 8px;
+            padding: 5px;
+            color: white;
+
+            img {
+                filter: invert(1);
+            }
+        }
+    }
+
+    button {
+        @include base-button;
+        width: 70px;
+        gap: 5px;
     }
 }
 
@@ -270,7 +296,6 @@
     &__chat {
         width: 100%;
         @include flex-center;
-        width: 1432px;
     }
 }
 
@@ -342,6 +367,10 @@
         width: 420px;
         height: 100vh;
 
+        button {
+            @include base-button;
+        }
+
         img {
             width: 50px;
             height: 50px;
@@ -356,12 +385,15 @@
     }
 
     &__completed {
-        width: 1052px;
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
     }
     // TICKET CHAT HEADER
     &__header {
         @include flex-row;
-        width: 1052px;
+        //width: 1052px;
         padding: 24px 32px 24px 32px;
 
         &-url {
@@ -404,20 +436,33 @@
                 width: 18px;
                 height: 18px;
             }
+
+            button {
+                @include base-button;
+
+                &:hover {
+                    background-color: rgb(13, 110, 253);
+
+                    img {
+                        filter: invert(1);
+                    }
+                }
+            }
         }
     }
     // TICKET CHAT MAIN
     &__main {
-        width: 1052px;
-        height: 100%;
-        padding: 24px 32px 24px 32px;
+        //width: 1052px;
+        //height: 100%;
+        //padding: 24px 32px 24px 32px;
 
         &-frame {
+            //height: 100vh;
             @include flex-column;
-            height: 956px;
+            //flex-grow: 1;
             justify-content: start;
             gap: 24px;
-            flex: 1;
+            padding: 24px 32px 24px 32px;
             overflow: hidden;
         }
 
@@ -477,6 +522,7 @@
         }
         // CHAT CONTENT
         &__content-frame {
+            height: 100%;
             @include flex-column;
             flex: 1;
             overflow: hidden;
@@ -584,12 +630,6 @@
                     @include flex-column;
                     width: 100%;
                     height: 44px;
-                    position: absolute;
-                    bottom: 0;
-                    left: 0;
-                    right: 0;
-                    height: 44px;
-                    z-index: 10;
 
                     .entering-messages {
                         @include flex-row;
@@ -657,6 +697,9 @@
         @include flex-column;
         justify-content: start;
         gap: 12px;
+        overflow-y: auto;
+        scrollbar-width: none;
+        padding: 5px;
     }
 
     &__action {
@@ -810,19 +853,20 @@
 
 
 .chat-wrapper {
-    @include flex-column;
-    flex: 1;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
     overflow: hidden;
-    position: relative;
 }
 
 .chat-content {
-    height: 837px;
+    height: 100%;
     @include flex-column;
     justify-content: start;
-    gap: 24px;
+    gap: 12px;
+    overflow-y: auto;
+    scrollbar-width: none;
 }
-
 // TICKET CREATE
 .ticket-create {
     &__wrapper {
@@ -843,17 +887,16 @@
     }
 
     &__main {
-        width: 900px;
-        height: 694px;
-        margin: 100px auto 0;
+        //margin: 100px 266px 266px 266px;
     }
 
     &__content {
         @include flex-column;
         justify-content: start;
         gap: 24px;
+        margin: 100px 266px 266px 266px;
 
-        &-btn button {
+        button {
             @include base-button;
             width: 100%;
             height: 44px;
@@ -932,7 +975,7 @@
             .upload-file {
                 @include flex-center;
                 gap: 12px;
-                width: 900px;
+                //width: 900px;
                 height: 48px;
                 border-radius: 8px;
                 border: 1px solid rgba(0, 0, 0, 0.1);
@@ -969,5 +1012,31 @@
                 }
             }
         }
+    }
+}
+
+.activeButton {
+    background-color: $button-hover-background-color;
+
+    img {
+        filter: brightness(0) invert(1);
+    }
+}
+
+button, a {
+    cursor: pointer;
+
+    &:hover {
+        transition: all 0.5s ease-in-out;
+        transform: scale(1.02);
+
+        img {
+            transition: all 0.5s ease-in-out;
+            transform: scale(1.02);
+        }
+    }
+
+    .ticket__btn-active {
+        background-color: $button-hover-background-color;
     }
 }
