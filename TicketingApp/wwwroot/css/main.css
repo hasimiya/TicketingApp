@@ -803,9 +803,13 @@ body, html {
   font-size: 16px;
   line-height: 100%;
 }
-.ticket-sidebar__action button:hover, .ticket-sidebar__action button active {
+.ticket-sidebar__action button:hover {
   background-color: white;
   color: rgb(0, 0, 0);
+}
+.ticket-sidebar__action button:active {
+  background-color: pink;
+  color: white;
 }
 .ticket-sidebar__status {
   display: flex;

@@ -1,15 +1,17 @@
 ﻿@using TicketingApp.Models
 @{
-    var ticketSolved = TicketRepository.GetSolvedTicket();
+    string typeTicket;
+    var selectedType = Context.Request.Query["typeTicket"].ToString();
 }
 <div class="ticket-sidebar">
     <div class="ticket-sidebar__action">
-        <div class="ticket-sidebar__status">
-            <button>Tickets</button>
-            <button>Solved</button>
-            <button>Opened</button>
-            @*<a onclick="ticketSolved" asp-controller="Home" asp-action="TicketSolved">Solved</a>*@
-        </div>
+        <form method="get">
+            <div class="ticket-sidebar__status">
+                <button type="submit" name="typeTicket" value="AllTicket">Tickets</button>
+                <button type="submit" name="typeTicket" value="SolvedTicket">Solved</button>
+                <button type="submit" name="typeTicket" value="OpenedTicket">Opened</button>
+            </div>
+        </form>
         <div class="ticket-sidebar__create">
             <a class="ticket-card__link-wrapper" asp-controller="Home" asp-action="TicketCreate">
                 <button>Create New +</button>
@@ -17,7 +19,6 @@
         </div>
     </div>
     <div class="ticket-sidebar__frame">
-
-        @await Component.InvokeAsync("Ticket")
+        @await Component.InvokeAsync("Ticket", new { typeTicket = selectedType })
     </div>
 </div>
