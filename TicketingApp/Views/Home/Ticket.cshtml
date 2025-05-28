@@ -3,10 +3,8 @@
 }
 @await Html.PartialAsync("_TicketSidebarPartial")
 <div class="main__container-ticket__chat">
-    <div class="ticket-chat__null">
-        <button>
-            <img src="~/Images/create-ticket.svg" alt="icon" />
-        </button>
+    <div class="ticket-chat__null">       
+        <a asp-action="TicketCreate"><img src="~/Images/create-ticket.svg" alt="icon" /></a>
         <p>Select ticket or create a new one to start messaging.</p>
     </div>
 </div>

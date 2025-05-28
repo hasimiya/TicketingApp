@@ -80,17 +80,22 @@ body, html {
 
 .main {
     &__container {
-        margin: 100px 320px;
-        //@include base-contanier;
-        justify-content: center;
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+        padding: 100px 150px;
         width: 100%;
+        overflow-y: auto;
+        scrollbar-width: none;
 
         &__frame {
-            //width: 1200px;
             width: 100%;
             display: flex;
             flex-direction: column;
             gap: 48px;
+            //overflow-y: auto;
+            //flex: 1 1 auto;
+
 
             h1 {
                 @include text__styles;
@@ -132,7 +137,6 @@ body, html {
             }
 
             &__2, &__3 {
-                //width: 1200px;
                 width: 100%;
                 display: flex;
                 flex-wrap: wrap;
@@ -144,7 +148,6 @@ body, html {
 
 
 .main__container__frame__2, main__container__frame__3 {
-    //width: 1200px;
     width: 100%;
     display: flex;
     flex-wrap: wrap;
@@ -393,7 +396,6 @@ body, html {
     // TICKET CHAT HEADER
     &__header {
         @include flex-row;
-        //width: 1052px;
         padding: 24px 32px 24px 32px;
 
         &-url {
@@ -452,14 +454,9 @@ body, html {
     }
     // TICKET CHAT MAIN
     &__main {
-        //width: 1052px;
-        //height: 100%;
-        //padding: 24px 32px 24px 32px;
 
         &-frame {
-            //height: 100vh;
             @include flex-column;
-            //flex-grow: 1;
             justify-content: start;
             gap: 24px;
             padding: 24px 32px 24px 32px;
@@ -586,7 +583,7 @@ body, html {
                             @include flex-column;
                             justify-content: start;
                             gap: 6px;
-                            max-width: 700px;
+                            max-width: 600px;
                             padding: 18px;
                             border-radius: 6px;
                             background-color: rgba(232, 241, 255, 1);
@@ -891,10 +888,6 @@ body, html {
         }
     }
 
-    &__main {
-        //margin: 100px 266px 266px 266px;
-    }
-
     &__content {
         @include flex-column;
         justify-content: start;
@@ -980,7 +973,6 @@ body, html {
             .upload-file {
                 @include flex-center;
                 gap: 12px;
-                //width: 900px;
                 height: 48px;
                 border-radius: 8px;
                 border: 1px solid rgba(0, 0, 0, 0.1);
