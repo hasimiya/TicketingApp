@@ -5,9 +5,8 @@ namespace TicketingApp.Models
 {
     public static class TicketRepository
     {
-        public static List<TicketModel> listTicket = new List<TicketModel>()
-        {
-            new TicketModel{ Id = 19, Status = "Opened", Title = "The button doesn't work",
+        private static readonly List<TicketModel> listTicket = [
+                    new TicketModel{ Id = 19, Status = "Opened", Title = "The button doesn't work",
                 Description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam eleifend quis quam...", Publication = "19.02.2024"},
         new TicketModel{ Id = 23, Status = "Opened", Title = "I wanted to discuss the custom UI-kit",
                 Description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam eleifend quis quam...", Publication = "19.02.2024"},
@@ -23,7 +22,7 @@ namespace TicketingApp.Models
                 Description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam eleifend quis quam...", Publication = "19.02.2024"},
         new TicketModel{ Id = 13, Status = "Opened", Title = "Why is cybersecurity important",
                 Description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam eleifend quis quam...", Publication = "19.02.2024"}
-        };
+                ];
         public static List<TicketModel> GetAllTicket()
         {
             return listTicket;
@@ -35,11 +34,11 @@ namespace TicketingApp.Models
         }
         public static List<TicketModel> GetOpenedTicket()
         {
-            return listTicket.Where(x => x.Status == "Opened").ToList();
+            return [.. listTicket.Where(x => x.Status == "Opened")];
         }
         public static List<TicketModel> GetSolvedTicket()
         {
-            return listTicket.Where(x => x.Status == "Solved").ToList();
+            return [.. listTicket.Where(x => x.Status == "Solved")];
         }
     }
 }

@@ -1,6 +1,6 @@
 ﻿@using TicketingApp.Models
 @{
-    string typeTicket;
+    //string typeTicket;
     var selectedType = Context.Request.Query["typeTicket"].ToString();
 }
 <div class="ticket-sidebar">
@@ -13,9 +13,9 @@
             </div>
         </form>
         <div class="ticket-sidebar__create">
-            <a class="ticket-card__link-wrapper" asp-controller="Home" asp-action="TicketCreate">
+            <form class="ticket-card__link-wrapper" asp-controller="Home" asp-action="TicketCreate">
                 <button>Create New +</button>
-            </a>
+            </form>
         </div>
     </div>
     <div class="ticket-sidebar__frame">
