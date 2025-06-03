@@ -1,3 +1,4 @@
+@charset "UTF-8";
 * {
   box-sizing: border-box;
   margin: 0;
@@ -6,6 +7,8 @@
 
 body, html {
   overflow: hidden;
+  font-size: 14px;
+  line-height: 24px;
 }
 
 .container {
@@ -34,7 +37,7 @@ body, html {
 .header__frame--bottom {
   height: 32px;
 }
-.header__frame--bottom button {
+.header__frame--bottom a {
   width: 32px;
   height: 32px;
   border: none;
@@ -169,7 +172,7 @@ body, html {
   padding: 24px;
   gap: 16px;
 }
-.feature-card:hover button {
+.feature-card:hover a {
   background-color: rgb(13, 110, 253);
 }
 .feature-card__description {
@@ -207,7 +210,7 @@ body, html {
   color: rgba(0, 0, 0, 0.65);
   line-height: 100%;
 }
-.feature-card button {
+.feature-card a {
   width: 32px;
   height: 32px;
   border: none;
@@ -221,7 +224,7 @@ body, html {
   width: 48px;
   height: 48px;
 }
-.feature-card button:hover, .feature-card button active {
+.feature-card a:hover, .feature-card a active {
   background-color: rgb(13, 110, 253);
 }
 
@@ -357,7 +360,6 @@ body, html {
   line-height: 20px;
   color: rgba(0, 0, 0, 0.85);
   font-size: 16px;
-  line-height: 100%;
   color: rgba(0, 0, 0, 0.4);
 }
 .ticket-chat__wrapper-details .details__main p {
@@ -368,7 +370,6 @@ body, html {
   letter-spacing: 0px;
   color: rgba(0, 0, 0, 0.65);
   font-size: 16px;
-  line-height: 100%;
   color: rgba(0, 0, 0, 0.85);
 }
 .ticket-chat__wrapper-details .details__main .text-status {
@@ -394,7 +395,7 @@ body, html {
   width: 420px;
   height: 100vh;
 }
-.ticket-chat__null button {
+.ticket-chat__null a {
   width: 32px;
   height: 32px;
   border: none;
@@ -475,7 +476,7 @@ body, html {
   width: 18px;
   height: 18px;
 }
-.ticket-chat__header-actions button {
+.ticket-chat__header-actions a {
   width: 32px;
   height: 32px;
   border: none;
@@ -485,11 +486,8 @@ body, html {
   border-radius: 8px;
   background-color: transparent;
 }
-.ticket-chat__header-actions button:hover {
-  background-color: grey;
-}
-.ticket-chat__header-actions button:hover img {
-  filter: invert(1);
+.ticket-chat__header-actions a:hover {
+  background-color: rgba(0, 0, 0, 0.05);
 }
 .ticket-chat__main-frame {
   display: flex;
@@ -607,6 +605,9 @@ body, html {
   align-items: end;
   gap: 6px;
 }
+.ticket-chat__main__content-frame .chat-main__content__section-1 .user-from-second, .ticket-chat__main__content-frame .chat-main__content__section-2 .user-from-second {
+  padding-left: 56px;
+}
 .ticket-chat__main__content-frame .chat-main__content__section-1 .user-me, .ticket-chat__main__content-frame .chat-main__content__section-1 .user-from, .ticket-chat__main__content-frame .chat-main__content__section-2 .user-me, .ticket-chat__main__content-frame .chat-main__content__section-2 .user-from {
   display: inline-flex;
   justify-content: start;
@@ -617,6 +618,9 @@ body, html {
 .ticket-chat__main__content-frame .chat-main__content__section-1 .user-me p, .ticket-chat__main__content-frame .chat-main__content__section-1 .user-from p, .ticket-chat__main__content-frame .chat-main__content__section-2 .user-me p, .ticket-chat__main__content-frame .chat-main__content__section-2 .user-from p {
   white-space: normal;
   word-break: break-word;
+}
+.ticket-chat__main__content-frame .chat-main__content__section-1 .user-me-second, .ticket-chat__main__content-frame .chat-main__content__section-1 .user-from-second, .ticket-chat__main__content-frame .chat-main__content__section-2 .user-me-second, .ticket-chat__main__content-frame .chat-main__content__section-2 .user-from-second {
+  padding-right: 56px;
 }
 .ticket-chat__main__content-frame .chat-main__content__section-1 .user-me__logo, .ticket-chat__main__content-frame .chat-main__content__section-1 .user-from__logo, .ticket-chat__main__content-frame .chat-main__content__section-2 .user-me__logo, .ticket-chat__main__content-frame .chat-main__content__section-2 .user-from__logo {
   display: flex;
@@ -653,7 +657,7 @@ body, html {
   justify-content: space-between;
   justify-content: start;
   gap: 6px;
-  max-width: 600px;
+  max-width: 700px;
   padding: 18px;
   border-radius: 6px;
   background-color: rgb(232, 241, 255);
@@ -665,6 +669,9 @@ body, html {
   line-height: 24px;
   letter-spacing: 0px;
   color: rgba(0, 0, 0, 0.65);
+}
+.ticket-chat__main__content-frame .chat-main__content__section-1 .user-me .user__send-message-from, .ticket-chat__main__content-frame .chat-main__content__section-1 .user-from .user__send-message-from, .ticket-chat__main__content-frame .chat-main__content__section-2 .user-me .user__send-message-from, .ticket-chat__main__content-frame .chat-main__content__section-2 .user-from .user__send-message-from {
+  background-color: rgba(0, 0, 0, 0.05);
 }
 .ticket-chat__main__content-frame .chat-main__content__section-1 .user-me .user__send-message .user__send-time, .ticket-chat__main__content-frame .chat-main__content__section-1 .user-from .user__send-message .user__send-time, .ticket-chat__main__content-frame .chat-main__content__section-2 .user-me .user__send-message .user__send-time, .ticket-chat__main__content-frame .chat-main__content__section-2 .user-from .user__send-message .user__send-time {
   display: flex;
@@ -729,6 +736,7 @@ body, html {
   padding: 5px;
   border-radius: 8px;
   border: 1px solid rgba(0, 0, 0, 0.1);
+  padding-left: 18px;
 }
 .ticket-chat__main__content-frame .chat-main__content__section-3 .entering-messages input::placeholder {
   font-family: "Poppins", sans-serif;
@@ -799,29 +807,10 @@ body, html {
 }
 .ticket-sidebar__action {
   width: 384px;
-  height: 104px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   gap: 12px;
-}
-.ticket-sidebar__action button {
-  font-family: "Poppins", sans-serif;
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 24px;
-  letter-spacing: 0px;
-  color: rgba(0, 0, 0, 0.65);
-  font-size: 16px;
-  line-height: 100%;
-}
-.ticket-sidebar__action button:hover {
-  background-color: white;
-  color: rgb(0, 0, 0);
-}
-.ticket-sidebar__action button:active {
-  background-color: white;
-  color: black;
 }
 .ticket-sidebar__status {
   display: flex;
@@ -844,14 +833,32 @@ body, html {
   width: 100%;
   height: 36px;
   border-radius: 8px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 24px;
+  letter-spacing: 0px;
+  color: rgba(0, 0, 0, 0.65);
+  font-size: 16px;
+  line-height: 100%;
+}
+.ticket-sidebar__status button:hover {
+  background-color: white;
+  color: rgb(0, 0, 0);
+  transition: all 0.15s ease-in-out;
+}
+.ticket-sidebar__status button.active {
+  background-color: white;
+  color: rgb(0, 0, 0);
 }
 .ticket-sidebar__create {
+  display: flex;
+  align-content: center;
+  height: 44px;
   border-radius: 12px;
-  padding: 4px;
-  background-color: rgb(244, 244, 245);
   gap: 12px;
 }
-.ticket-sidebar__create button {
+.ticket-sidebar__create input {
   width: 32px;
   height: 32px;
   border: none;
@@ -860,10 +867,47 @@ body, html {
   justify-content: center;
   border-radius: 8px;
   background-color: transparent;
-  width: 100%;
-  height: 48px;
+  width: 336px;
+  height: 44px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+.ticket-sidebar__create .input-with-icon {
+  background: url("/Images/search-icon.svg") no-repeat 10px center;
+  background-size: 16px 16px;
+  padding-left: 36px; /* отступ, чтобы текст не налез на иконку */
+}
+.ticket-sidebar__create input::placeholder {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 24px;
+  letter-spacing: 0px;
+  color: rgba(0, 0, 0, 0.65);
+  font-size: 14px;
+  line-height: 21px;
+  color: rgba(0, 0, 0, 0.4);
+}
+.ticket-sidebar__create a {
+  width: 32px;
+  height: 32px;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   border-radius: 8px;
-  padding: 4px;
+  background-color: transparent;
+  width: 42px;
+  height: 44px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 24px;
+  letter-spacing: 0px;
+  color: rgba(0, 0, 0, 0.65);
+  font-size: 16px;
+  color: rgba(0, 0, 0, 0.4);
+  text-decoration: none;
 }
 .ticket-sidebar__info {
   width: 384px;
@@ -1044,7 +1088,7 @@ body, html {
   gap: 24px;
   margin: 100px 266px 266px 266px;
 }
-.ticket-create__content button {
+.ticket-create__content a {
   width: 32px;
   height: 32px;
   border: none;
@@ -1134,15 +1178,7 @@ body, html {
   border-radius: 8px;
   border: 1px solid rgba(0, 0, 0, 0.1);
 }
-.ticket-create__content-form input::placeholder {
-  font-family: "Poppins", sans-serif;
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 24px;
-  letter-spacing: 0px;
-  color: rgba(0, 0, 0, 0.65);
-  font-size: 12px;
-  line-height: 100%;
+.ticket-create__content-form input::placeholder, .ticket-create__content-form textarea::placeholder {
   color: rgba(0, 0, 0, 0.4);
 }
 .ticket-create__content .form-input {
@@ -1152,6 +1188,9 @@ body, html {
   justify-content: start;
   width: 100%;
   gap: 6px;
+}
+.ticket-create__content .form-input input {
+  padding-left: 12px;
 }
 .ticket-create__content .form-input .input-description {
   font-family: "Poppins", sans-serif;
@@ -1164,6 +1203,8 @@ body, html {
   padding: 5px;
   border-radius: 8px;
   border: 1px solid rgba(0, 0, 0, 0.1);
+  resize: none;
+  padding-left: 12px;
 }
 .ticket-create__content .form-input .upload-file {
   display: flex;
@@ -1230,7 +1271,8 @@ body, html {
 button, a {
   cursor: pointer;
 }
-button .ticket__btn-active, a .ticket__btn-active {
+
+.ticket__btn-active {
   background-color: rgb(13, 110, 253);
 }
 

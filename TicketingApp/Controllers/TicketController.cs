@@ -1,29 +1,12 @@
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 using TicketingApp.Models;
-
 namespace TicketingApp.Controllers
 {
-    public class HomeController : Controller
+    public class TicketController : Controller
     {
-
-        public IActionResult Index()
-        {
-            return View();
-        }
         public IActionResult Ticket()
-        {
-            return View();
-        }
-        public IActionResult Privacy()
-        {
-            return View();
-        }
-        public IActionResult Bell()
-        {
-            return View();
-        }
-        public IActionResult Settings()
         {
             return View();
         }

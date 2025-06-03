@@ -1,21 +1,19 @@
-﻿@using TicketingApp.Models
+@using TicketingApp.Models
 @{
-    //string typeTicket;
     var selectedType = Context.Request.Query["typeTicket"].ToString();
 }
 <div class="ticket-sidebar">
     <div class="ticket-sidebar__action">
         <form method="get">
             <div class="ticket-sidebar__status">
-                <button type="submit" name="typeTicket" value="AllTicket">Tickets</button>
-                <button type="submit" name="typeTicket" value="SolvedTicket">Solved</button>
-                <button type="submit" name="typeTicket" value="OpenedTicket">Opened</button>
+                <button type="submit" name="typeTicket" value="AllTicket" class="@(selectedType == "AllTicket" || string.IsNullOrEmpty(selectedType) ? "active" : "")">Tickets</button>
+                <button type="submit" name="typeTicket" value="SolvedTicket" class="@(selectedType == "SolvedTicket" ? "active" : "")">Solved</button>
+                <button type="submit" name="typeTicket" value="OpenedTicket" class="@(selectedType == "OpenedTicket" ? "active" : "")">Opened</button>
             </div>
         </form>
         <div class="ticket-sidebar__create">
-            <form class="ticket-card__link-wrapper" asp-controller="Home" asp-action="TicketCreate">
-                <button>Create New +</button>
-            </form>
+            <input class="input-text input-with-icon" type="text" placeholder="Search by summary">
+            <a asp-controller="Home" asp-action="TicketCreate">+</a>
         </div>
     </div>
     <div class="ticket-sidebar__frame">
