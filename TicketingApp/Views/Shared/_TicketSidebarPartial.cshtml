@@ -1,6 +1,10 @@
 @using TicketingApp.Models
 @{
     var selectedType = Context.Request.Query["typeTicket"].ToString();
+    if (string.IsNullOrEmpty(selectedType) && TempData["typeTicket"] != null)
+    {
+        selectedType = TempData["typeTicket"].ToString();
+    }
 }
 <div class="ticket-sidebar">
     <div class="ticket-sidebar__action">
@@ -13,7 +17,7 @@
         </form>
         <div class="ticket-sidebar__create">
             <input class="input-text input-with-icon" type="text" placeholder="Search by summary">
-            <a asp-controller="Home" asp-action="TicketCreate">+</a>
+            <a asp-controller="Home" asp-action="TicketCreate" asp-route-typeTicket="@selectedType">+</a>
         </div>
     </div>
     <div class="ticket-sidebar__frame">

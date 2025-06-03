@@ -1,8 +1,14 @@
 ﻿@model IEnumerable<TicketModel>
-
+@{
+    var selectedType = Context.Request.Query["typeTicket"].ToString();
+    if (string.IsNullOrEmpty(selectedType) && TempData["typeTicket"] != null)
+    {
+        selectedType = TempData["typeTicket"].ToString();
+    }
+}
 @foreach (var ticket in Model)
 {
-    <a class="ticket-card__link-wrapper" asp-controller="Home" asp-action="TicketChat">
+    <a class="ticket-card__link-wrapper" asp-controller="Home" asp-action="TicketChat" asp-route-typeTicket="@selectedType">
         <div class="ticket-card">
 
             <div class="ticket-card__header">

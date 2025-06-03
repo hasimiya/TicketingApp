@@ -1,6 +1,11 @@
 @model MenuModel
 @{
     var isActive = Model.CurrentController.ToLower() == "home" && Model.CurrentAction.ToLower() == Model.Action.ToLower();
+    var selectedType = Context.Request.Query["typeTicket"].ToString();
+    if (string.IsNullOrEmpty(selectedType) && TempData["typeTicket"] != null)
+    {
+        selectedType = TempData["typeTicket"].ToString();
+    }
 }
 <a asp-area="" asp-controller="Home" asp-action="@Model.Action" class="header__menu__button @(isActive ? "activeButton" : "")">
     <img src="@Url.Content(Model.IconPath)" alt="icon" />
