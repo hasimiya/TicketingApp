@@ -73,7 +73,7 @@ body, html {
   border-radius: 8px;
 }
 .header__menu__button:hover, .header__menu__button active {
-  background-color: blue;
+  background-color: rgb(13, 110, 253);
 }
 .header__menu__button:hover svg, .header__menu__button:hover img {
   filter: brightness(0) invert(1);
@@ -125,7 +125,7 @@ body, html {
 .main__container__frame__1 h1 {
   text-align: center;
 }
-.main__container__frame__1 button {
+.main__container__frame__1 a {
   width: 32px;
   height: 32px;
   border: none;
@@ -139,8 +139,8 @@ body, html {
   width: 64px;
   height: 64px;
 }
-.main__container__frame__1 button:hover, .main__container__frame__1 button active {
-  background-color: blue;
+.main__container__frame__1 a:hover, .main__container__frame__1 a active {
+  background-color: rgb(13, 110, 253);
 }
 .main__container__frame__1 img {
   width: 15px;
@@ -170,7 +170,7 @@ body, html {
   gap: 16px;
 }
 .feature-card:hover button {
-  background-color: blue;
+  background-color: rgb(13, 110, 253);
 }
 .feature-card__description {
   display: flex;
@@ -222,7 +222,7 @@ body, html {
   height: 48px;
 }
 .feature-card button:hover, .feature-card button active {
-  background-color: blue;
+  background-color: rgb(13, 110, 253);
 }
 
 .title__text__block {
@@ -251,13 +251,6 @@ body, html {
   width: 20px;
   height: 20px;
 }
-.features-section__more:hover div {
-  background-color: blue;
-  border-radius: 8px;
-}
-.features-section__more:hover div p {
-  color: white;
-}
 .features-section__more:hover svg, .features-section__more:hover img {
   filter: brightness(0) invert(1);
 }
@@ -270,16 +263,19 @@ body, html {
   color: rgba(0, 0, 0, 0.65);
   line-height: 100%;
 }
-.features-section__more:hover button {
-  background-color: blue;
+.features-section__more:hover a {
+  background-color: rgb(13, 110, 253);
   border-radius: 8px;
   padding: 5px;
   color: white;
 }
-.features-section__more:hover button img {
+.features-section__more:hover a img {
   filter: invert(1);
 }
-.features-section__more button {
+.features-section__more:hover a p {
+  color: white;
+}
+.features-section__more a {
   width: 32px;
   height: 32px;
   border: none;
@@ -314,11 +310,13 @@ body, html {
   flex-direction: column;
   justify-content: space-between;
   justify-content: start;
-  width: 380px;
+  min-width: 380px;
   height: 100%;
+  border-left: 1px solid rgba(0, 0, 0, 0.1);
 }
 .ticket-chat__wrapper-details .details__header {
   padding: 18px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 .ticket-chat__wrapper-details .details__header p {
   font-family: "Poppins", sans-serif;
@@ -488,7 +486,7 @@ body, html {
   background-color: transparent;
 }
 .ticket-chat__header-actions button:hover {
-  background-color: rgb(13, 110, 253);
+  background-color: grey;
 }
 .ticket-chat__header-actions button:hover img {
   filter: invert(1);
@@ -545,7 +543,7 @@ body, html {
 .ticket-chat__main__header .chat-main__actions .close-icon img {
   filter: invert(1);
 }
-.ticket-chat__main__header .chat-main__actions button {
+.ticket-chat__main__header .chat-main__actions a {
   border: none;
   display: flex;
   align-items: center;
@@ -554,15 +552,24 @@ body, html {
   border-radius: 6px;
   padding: 10px 12px 10px 12px;
   background-color: rgba(0, 0, 0, 0.05);
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 24px;
+  letter-spacing: 0px;
+  color: rgba(0, 0, 0, 0.65);
+  font-size: 16px;
+  line-height: 100%;
+  color: rgba(0, 0, 0, 0.85);
 }
-.ticket-chat__main__header .chat-main__actions button:hover {
+.ticket-chat__main__header .chat-main__actions a:hover {
   background-color: rgb(13, 110, 253);
   color: white;
 }
-.ticket-chat__main__header .chat-main__actions button:hover img {
+.ticket-chat__main__header .chat-main__actions a:hover img {
   filter: brightness(0) invert(1);
 }
-.ticket-chat__main__header .chat-main__actions button img {
+.ticket-chat__main__header .chat-main__actions a img {
   width: 16px;
   height: 16px;
 }
@@ -703,6 +710,7 @@ body, html {
   justify-content: space-between;
   width: 100%;
   height: 44px;
+  margin-top: 24px;
 }
 .ticket-chat__main__content-frame .chat-main__content__section-3 .entering-messages {
   display: flex;
@@ -1009,7 +1017,13 @@ body, html {
   width: 100%;
 }
 .ticket-create__header {
-  padding: 18px 32px 18px 32px;
+  padding: 24px 32px 24px 32px;
+}
+.ticket-create__url {
+  height: 32px;
+  display: flex;
+  align-items: center;
+  padding-left: 44.46px;
 }
 .ticket-create__url p {
   font-family: "Poppins", sans-serif;
@@ -1207,7 +1221,7 @@ body, html {
 }
 
 .activeButton {
-  background-color: blue;
+  background-color: rgb(13, 110, 253);
 }
 .activeButton img {
   filter: brightness(0) invert(1);
@@ -1216,16 +1230,8 @@ body, html {
 button, a {
   cursor: pointer;
 }
-button:hover, a:hover {
-  transition: all 0.5s ease-in-out;
-  transform: scale(1.02);
-}
-button:hover img, a:hover img {
-  transition: all 0.5s ease-in-out;
-  transform: scale(1.02);
-}
 button .ticket__btn-active, a .ticket__btn-active {
-  background-color: blue;
+  background-color: rgb(13, 110, 253);
 }
 
 /*# sourceMappingURL=main.css.map */
