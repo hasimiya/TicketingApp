@@ -5,5 +5,6 @@ Front-End проект "TicketingApp"
 Технологии: 
 - HTML;
 - CSS; 
+- SCSS:
 - ASP .NET Core:
 - Figma.
